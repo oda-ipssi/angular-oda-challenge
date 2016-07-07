@@ -7,7 +7,7 @@
 **Notice: we use clone method as https, not into ssh, thanks :)**
 
 - Add the **Upstream** to your remote :
-    * `git remote add upstream https://github.com/oda-ipssi/oda-challenge-ipssi.git`
+    * `git remote add upstream https://github.com/oda-ipssi/angular-oda-challenge.git`
 
 - To check if it works:
     * `git remote -v`, *the output have to be :*
@@ -16,8 +16,8 @@
   $ git remote -v
   origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
   origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
-  upstream  https://github.com/oda-ipssi/oda-challenge-ipssi.git (fetch)
-  upstream  https://github.com/oda-ipssi/oda-challenge-ipssi.git (push)
+  upstream  https://github.com/oda-ipssi/angular-oda-challenge.git (fetch)
+  upstream  https://github.com/oda-ipssi/angular-oda-challenge.git (push)
   ```
 
 **Warning: your master branch is always the mirror of upstream, so you have to dev on another branch, the PULL REQUEST work flow force to review code by the other on your master**

@@ -33,4 +33,10 @@ angular
         templateUrl: 'views/cgv.html',
         controller: 'CgvCtrl'
       });
+      
+      $stateProvider.state('inscription', {
+        url: '/inscription',
+        templateUrl: 'views/inscription.html',
+        controller: 'InscriptionCtrl'
+      });
   });

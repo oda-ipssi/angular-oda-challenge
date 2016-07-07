@@ -18,11 +18,19 @@ angular
     'ui.router'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
+      
       $urlRouterProvider.otherwise('/');
 
-      $stateProvider.state('home', {
+      $stateProvider
+      .state('home', {
         url: '/',
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
+      })
+
+      .state('cgv', {
+        url: '/cgv',
+        templateUrl: 'views/cgv.html',
+        controller: 'CgvCtrl'
       });
   });

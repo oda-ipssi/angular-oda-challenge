@@ -25,4 +25,10 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       });
+      
+      $stateProvider.state('inscription', {
+        url: '/inscription',
+        templateUrl: 'views/inscription.html',
+        controller: 'InscriptionCtrl'
+      });
   });

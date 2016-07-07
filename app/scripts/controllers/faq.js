@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name odaChallengeApp.controller:CgvCtrl
+ * @name odaChallengeApp.controller:FaqCtrl
  * @description
- * # CgvCtrl
+ * # FaqCtrl
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('GscCtrl',['$scope','$http', function ($scope, $http) {
+  .controller('FaqCtrl', ['$scope','$http', function ($scope, $http) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -16,10 +16,12 @@ angular.module('odaChallengeApp')
     ];
 
     $scope.$on('$viewContentLoaded', function(event) {
-      $http.get('http://localhost:8000/DataTest/gsc.json').then(function successCallback(response) {
-           $scope.pageContent = response.data;
+      $http.get('http://localhost:8000/DataTest/faq.json').then(function successCallback(response) {
+           $scope.questionList = response.data;
+           console.log($scope.questionList)
         }, function errorCallback(response){
 
         });
     });
+
   }]);

@@ -1,0 +1,13 @@
+<p>This is the informationRequest view for authentified user.</p>
+
+<h3>Besoin d'informations techniques ?</h3>
+<h4>Par téléphone : </h4>
+{{phone}}
+<h4>Par mail :</h4>
+<form novalidate class="reqInfo-form">
+	<input type="text" placeholder="Sujet" ng-model="reqInfo.subject" />
+	<textarea placeholder="Votre message" ng-model="reqInfo.message"></textarea>
+	<input type="submit" ng-click="sendQuestion(reqInfo)" value="Envoyer"/>
+	<p>{{errorSubject}}</p>
+	<p>{{errorMessage}}</p>
+</form>

@@ -18,8 +18,30 @@ angular
     'ui.router'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
+
       $urlRouterProvider.otherwise('/');
 
+<<<<<<< HEAD
+      $stateProvider
+        .state('home', {
+          url: '/',
+          templateUrl: 'views/home.html',
+          controller: 'HomeCtrl'
+        })
+
+        .state('login', {
+          url: '/login',
+          templateUrl: 'views/login.html',
+          controller: 'LoginCtrl'
+        })
+
+        .state('tarif', {
+          url: '/tarif',
+          templateUrl: 'views/tarif.html',
+          controller: 'TarifCtrl'
+        })
+
+=======
       $stateProvider.state('home', {
         url: '/',
         templateUrl: 'views/home.html',
@@ -31,4 +53,5 @@ angular
         templateUrl: 'views/inscription.html',
         controller: 'InscriptionCtrl'
       });
+>>>>>>> master
   });

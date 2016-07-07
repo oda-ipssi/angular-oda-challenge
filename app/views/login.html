@@ -1,0 +1,14 @@
+<p>This is the login view.</p>
+
+<div ng-controller="LoginCtrl">
+	<form novalidate class="login-form">
+		<input type="mail" placeholder="Email" ng-model="user.mail" />
+		<input type="password" placeholder="Mot de passe" ng-model="user.pwd" />
+		<input type="submit" ng-click="login(user)" value="Se connecter"/>
+		<p>{{errorMail}}</p>
+		<p>{{errorPwd}}</p>
+	</form>
+
+	<pre>user = {{user | json}}</pre>
+
+</div>

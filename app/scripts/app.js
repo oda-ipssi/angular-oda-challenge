@@ -34,6 +34,12 @@ angular
           controller: 'LoginCtrl'
         })
 
+        .state('reqInfo', {
+          url: '/reqInfo',
+          templateUrl: 'views/reqinfo.html',
+          controller: 'InformationrequestCtrl'
+        })
+
         .state('tarif', {
           url: '/tarif',
           templateUrl: 'views/tarif.html',
@@ -44,6 +50,18 @@ angular
           url: '/gsc',
           templateUrl: 'views/gsc.html',
           controller: 'GscCtrl'
+        })
+
+        .state('faq', {
+          url: '/faq',
+          templateUrl: 'views/faq.html',
+          controller: 'FaqCtrl'
+        })
+
+        .state('support', {
+          url: '/support',
+          templateUrl: 'views/support.html',
+          controller: 'SupportCtrl'
         });
       
       $stateProvider.state('inscription', {

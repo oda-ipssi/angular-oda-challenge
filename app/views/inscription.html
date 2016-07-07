@@ -1,0 +1,19 @@
+<form ng-submit="inscriptionSubmit()">
+  <input type="text" ng-model="username" placeholder="Nom d'utilisateur">
+  <input type="text" ng-model="email" placeholder="Adresse email">
+  <input type="password" ng-model="password" placeholder="Mot de passe">
+  <input type="password" ng-model="passwordConfirm" placeholder="Confirmer mot de passe">
+  <input type="submit" value="Envoyer">
+</form>
+
+<div ng-show="usernameMessage">
+  {{ usernameMessage }}
+</div>
+
+<div ng-show="emailMessage">
+  {{ emailMessage }}
+</div>
+
+<div ng-show="passwordMessage">
+  {{ passwordMessage }}
+</div>

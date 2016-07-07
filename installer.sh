@@ -14,7 +14,7 @@ echo "Installing Yeoman and his dependencies ..."
 npm install -g grunt-cli bower yo generator-karma generator-angular
 
 echo "Cloning git repository ..."
-git clone [GIT_URL]
+git clone https://github.com/oda-ipssi/angular-oda-challenge
 
 cd ./angular-oda-challenge
 

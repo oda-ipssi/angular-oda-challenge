@@ -21,6 +21,7 @@ angular
 
       $urlRouterProvider.otherwise('/');
 
+<<<<<<< HEAD
       $stateProvider
         .state('home', {
           url: '/',
@@ -40,4 +41,17 @@ angular
           controller: 'TarifCtrl'
         })
 
+=======
+      $stateProvider.state('home', {
+        url: '/',
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
+      });
+      
+      $stateProvider.state('inscription', {
+        url: '/inscription',
+        templateUrl: 'views/inscription.html',
+        controller: 'InscriptionCtrl'
+      });
+>>>>>>> master
   });

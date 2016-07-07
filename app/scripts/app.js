@@ -40,10 +40,10 @@ angular
           controller: 'TarifCtrl'
         })
 
-        .state('cgv', {
-          url: '/cgv',
-          templateUrl: 'views/cgv.html',
-          controller: 'CgvCtrl'
+        .state('gsc', {
+          url: '/gsc',
+          templateUrl: 'views/gsc.html',
+          controller: 'GscCtrl'
         });
       
       $stateProvider.state('inscription', {

@@ -1,8 +1,18 @@
 <form ng-submit="inscriptionSubmit()">
+  <!-- Info compte -->
   <input type="text" ng-model="username" placeholder="Nom d'utilisateur">
   <input type="text" ng-model="email" placeholder="Adresse email">
   <input type="password" ng-model="password" placeholder="Mot de passe">
   <input type="password" ng-model="passwordConfirm" placeholder="Confirmer mot de passe">
+
+  <!-- Infos personnelles -->
+  <input type="text" ng-model="firstname" placeholder="Prénom">
+  <input type="text" ng-model="lastname" placeholder="Nom de famille">
+  <input type="text" ng-model="address" placeholder="Adresse">
+  <input type="text" ng-model="zipcode" placeholder="Code postal">
+  <input type="text" ng-model="city" placeholder="Ville">
+  <input type="text" ng-model="phone" placeholder="Téléphone">
+
   <input type="submit" value="Envoyer">
 </form>
 
@@ -16,4 +26,28 @@
 
 <div ng-show="passwordMessage">
   {{ passwordMessage }}
+</div>
+
+<div ng-show="firstnameMessage">
+  {{ firstnameMessage }}
+</div>
+
+<div ng-show="lastnameMessage">
+  {{ lastnameMessage }}
+</div>
+
+<div ng-show="addressMessage">
+  {{ addressMessage }}
+</div>
+
+<div ng-show="zipcodeMessage">
+  {{ zipcodeMessage }}
+</div>
+
+<div ng-show="cityMessage">
+  {{ cityMessage }}
+</div>
+
+<div ng-show="phoneMessage">
+  {{ phoneMessage }}
 </div>

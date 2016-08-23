@@ -8,16 +8,14 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('GscCtrl',['$scope','$http', function ($scope, $http) {
+  .controller('GscCtrl',['$scope','$http', '$location', function ($scope, $http, $location) {
 
     $scope.$on('$viewContentLoaded', function(event) {
-      event.preventDefault();
-      $http.get('http://localhost:8000/DataTest/gsc.json').then(
-        function (response) {
-           $scope.pageContent = response.data;
-        },
-        function (response){
-          console.log(response);
-        });
+      $http.get('http://' + $location.host() + ':' + $location.port() + '/json/cgv.json').then(function successCallback(response) {
+        console.log(response);
+        $scope.pageContent = response.data.data.content;
+      }, function errorCallback(response){
+        console.log(response);
+      });
     });
   }]);

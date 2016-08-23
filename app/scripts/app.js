@@ -62,6 +62,12 @@ angular
           url: '/support',
           templateUrl: 'views/support.html',
           controller: 'SupportCtrl'
+        })
+
+        .state('test', {
+          url: '/test',
+          templateUrl: 'views/datatest.html',
+          controller: 'DatatestCtrl'
         });
       
       $stateProvider.state('inscription', {

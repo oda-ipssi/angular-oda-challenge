@@ -11,21 +11,28 @@ angular.module('odaChallengeApp')
   .controller('LoginCtrl', ['$scope','$http','ajaxFactory', function ($scope, $http, ajaxFactory) {
 
     $scope.master = {};
-    $scope.login = function(user){
-      var verif = true;
-      console.log(user);
-      if(!user || !user.mail || user.mail === ''){
+    $scope.user = {}
+
+    $scope.login = function(user) {
+
+      $scope.errorMail = '';
+      $scope.errorPwd = '';
+
+      var check = true;
+
+      if( !user.mail || user.mail === '' ) {
         $scope.errorMail = 'Merci de renseigner votre adresse mail';
-        verif = false;
+        check = false;
       }
 
-      if(!user || !user.pwd || user.pwd === ''){
+      if( !user.pwd || user.pwd === '' ) {
         $scope.errorPwd = 'Merci de renseigner votre mot de passe';
-        verif = false;
+        check = false;
       }
 
-      if(verif === true) {
-        ajaxFactory.post('login', $scope.user);
+      if( check === true ) {
+        $http.post('http://localhost:8000/login', user);
       }
+
     };
   }]);

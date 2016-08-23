@@ -15,13 +15,13 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'ui.grid'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
 
       $urlRouterProvider.otherwise('/');
 
-<<<<<<< HEAD
       $stateProvider
         .state('home', {
           url: '/',
@@ -40,18 +40,14 @@ angular
           templateUrl: 'views/tarif.html',
           controller: 'TarifCtrl'
         })
-
-=======
-      $stateProvider.state('home', {
-        url: '/',
-        templateUrl: 'views/home.html',
-        controller: 'HomeCtrl'
-      });
-      
-      $stateProvider.state('inscription', {
-        url: '/inscription',
-        templateUrl: 'views/inscription.html',
-        controller: 'InscriptionCtrl'
-      });
->>>>>>> master
+        .state('inscription', {
+          url: '/inscription',
+          templateUrl: 'views/inscription.html',
+          controller: 'InscriptionCtrl'
+        })
+        .state('testjson', {
+          url: '/testjson',
+          templateUrl: 'views/testjson.html',
+          controller: 'TestjsonCtrl',
+        });
   });

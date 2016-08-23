@@ -8,13 +8,12 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('LoginCtrl', ['$scope','$http','ajaxFactory', function ($scope, $http, ajaxFactory) {
+  .controller('LoginCtrl', ['$scope','$http', function ($scope, $http) {
 
     $scope.master = {};
-    $scope.user = {}
+    $scope.user = {};
 
     $scope.login = function(user) {
-
       $scope.errorMail = '';
       $scope.errorPwd = '';
 

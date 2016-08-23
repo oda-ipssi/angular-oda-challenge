@@ -9,17 +9,15 @@
  */
 angular.module('odaChallengeApp')
   .controller('GscCtrl',['$scope','$http', function ($scope, $http) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
 
     $scope.$on('$viewContentLoaded', function(event) {
-      $http.get('http://localhost:8000/DataTest/gsc.json').then(function successCallback(response) {
+      event.preventDefault();
+      $http.get('http://localhost:8000/DataTest/gsc.json').then(
+        function (response) {
            $scope.pageContent = response.data;
-        }, function errorCallback(response){
-
+        },
+        function (response){
+          console.log(response);
         });
     });
   }]);

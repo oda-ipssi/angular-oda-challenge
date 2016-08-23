@@ -93,6 +93,19 @@
               "content": "Nullam blandit magna a tempus commodo."
             }
           ]
+        },
+        {
+          "table" : "something", 
+          "datas" : [
+            {
+              "id": 1,
+              "name": "Toto"
+            },
+            {
+              "id": 2,
+              "name": "Tata"
+            }
+          ]
         }
       ]
     },

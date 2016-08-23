@@ -58,14 +58,14 @@ angular
           templateUrl: 'views/support.html',
           controller: 'SupportCtrl'
         })
-        .state('test', {
-          url: '/test',
-          templateUrl: 'views/datatest.html',
-          controller: 'DatatestCtrl'
-        })
         .state('inscription', {
-        url: '/inscription',
-        templateUrl: 'views/inscription.html',
-        controller: 'InscriptionCtrl'
-      });
-  });
+          url: '/inscription',
+          templateUrl: 'views/inscription.html',
+          controller: 'InscriptionCtrl'
+        })
+        .state('testjson', {
+          url: '/testjson',
+          templateUrl: 'views/testjson.html',
+          controller: 'TestjsonCtrl'
+        });
+    });

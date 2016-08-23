@@ -16,10 +16,10 @@ angular.module('odaChallengeApp')
 
         $timeout(function(){
           $scope.jsonDatas = success.data;
-          console.log($scope.jsonDatas.values[0].datas[0].datas);
+          console.log($scope.jsonDatas);
         },false);
       },
-
+ 
       function(error) {
         console.log(error);
       }

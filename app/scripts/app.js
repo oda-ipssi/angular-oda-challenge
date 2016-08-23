@@ -58,10 +58,10 @@ angular
           templateUrl: 'views/support.html',
           controller: 'SupportCtrl'
         })
-        .state('testjson', {
-          url: '/testjson',
-          templateUrl: 'views/testjson.html',
-          controller: 'TestjsonCtrl',
+        .state('test', {
+          url: '/test',
+          templateUrl: 'views/datatest.html',
+          controller: 'DatatestCtrl'
         })
         .state('inscription', {
         url: '/inscription',

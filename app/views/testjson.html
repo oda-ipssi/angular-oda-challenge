@@ -4,7 +4,17 @@
 
   <div ng-repeat="table in database.datas">
     <h3>Table name: {{table.table}}</h3>
-    <div ui-grid="{ data: table.datas }" class="myGrid"></div>
+    <div ui-grid="gridOptions" ui-grid-edit ui-grid-cellnav class="myGrid"></div>
   </div>
 </div>
- 
+
+
+<div ng-repeat="database in gridsDatas">
+  <h2>Database: {{database.name}}</h2>
+
+  <div ng-repeat="table in database.tables">
+    <h3>Table: {{table.name}}</h3>
+
+    <div ui-grid="table.opts" ui-grid-edit ui-grid-cellnav ui-grid-pagination class="grid"></div>
+  </div>
+</div>

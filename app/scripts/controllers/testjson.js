@@ -19,7 +19,7 @@ angular.module('odaChallengeApp')
           console.log($scope.jsonDatas);
         },false);
       },
- 
+
       function(error) {
         console.log(error);
       }

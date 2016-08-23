@@ -1,0 +1,119 @@
+{
+  "userId" : 1,
+  "databases" : [
+    {
+      "name" : "test_database",
+      "charset" : "utf-8",
+      "tables" : [
+        {
+          "name" : "users",
+          "fields": [
+            {
+              "title": "id",
+              "type": "integer",
+              "pk": true,
+              "autoInc": true
+            },
+            {
+              "title": "name",
+              "type": "string",
+              "maxSize": 50
+            },
+            {
+              "title": "online",
+              "type": "boolean"
+            },
+            {
+              "title": "content",
+              "type": "text"
+            }
+          ]
+        },
+
+        {
+          "name" : "something",
+          "fields": [
+            {
+              "title": "id",
+              "type": "integer",
+              "pk": true,
+              "autoInc": true
+            },
+            {
+              "title": "name",
+              "type": "string",
+              "maxSize": 50
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name" : "random_database",
+      "charset" : "utf-8",
+      "tables" : [
+        {
+          "name" : "something",
+          "fields": [
+            {
+              "title": "id",
+              "type": "integer",
+              "pk": true,
+              "autoInc": true
+            },
+            {
+              "title": "name",
+              "type": "string",
+              "maxSize": 50
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "values" : [
+    {
+      "database" : "test_database",
+      "datas" : [
+        {
+          "table" : "users",
+          "datas" : [
+            {
+              "id": 1,
+              "name": "Arthur",
+              "online": true,
+              "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+              "id": 2,
+              "name": "Bernard",
+              "online": false,
+              "content": "Nullam blandit magna a tempus commodo."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "database" : "random_database",
+      "datas" : [
+        {
+          "table" : "something",
+          "datas" : [
+            {
+              "id": 1,
+              "name": "First news"
+              },
+            {
+              "id": 2,
+              "name": "First news"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

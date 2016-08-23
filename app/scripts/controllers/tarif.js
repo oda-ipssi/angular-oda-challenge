@@ -9,18 +9,16 @@
  */
 angular.module('odaChallengeApp')
   .controller('TarifCtrl', ['$scope','$http', function ($scope, $http) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
 
     $scope.$on('$viewContentLoaded', function(event) {
-      $http.get('http://localhost:8000/DataTest/tarifList.json').then(function successCallback(response) {
+      $http.get('http://localhost:8000/DataTest/tarifList.json').then(
+        function(response) {
            $scope.tarifList = response.data;
-           console.log($scope.tarifList)
-        }, function errorCallback(response){
+           console.log($scope.tarifList);
+        },
 
+        function(response) {
+          console.log(response);
         });
     });
 

@@ -9,33 +9,30 @@
  */
 angular.module('odaChallengeApp')
   .controller('LoginCtrl', ['$scope','$http','ajaxFactory', function ($scope, $http, ajaxFactory) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
 
     $scope.master = {};
     $scope.user = {}
 
-    $scope.login = function(user){
+    $scope.login = function(user) {
 
-      $scope.errorMail = "";
-      $scope.errorPwd = "";
+      $scope.errorMail = '';
+      $scope.errorPwd = '';
+
       var check = true;
-      if(!user.mail || user.mail == ""){
-        $scope.errorMail = "Merci de renseigner votre adresse mail";
-        check = false
+
+      if( !user.mail || user.mail === '' ) {
+        $scope.errorMail = 'Merci de renseigner votre adresse mail';
+        check = false;
       }
 
-      if(!user.pwd || user.pwd == ""){
-        $scope.errorPwd = "Merci de renseigner votre mot de passe";
-        check = false
+      if( !user.pwd || user.pwd === '' ) {
+        $scope.errorPwd = 'Merci de renseigner votre mot de passe';
+        check = false;
       }
 
-      if(check == true)
-        $http.post('http://localhost:8000/login', user)
-    	
+      if( check === true ) {
+        $http.post('http://localhost:8000/login', user);
+      }
+
     };
-
   }]);

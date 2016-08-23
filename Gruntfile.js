@@ -1,4 +1,3 @@
-// Generated on 2016-07-05 using generator-angular 0.15.1
 'use strict';
 
 // # Globbing

@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var app = angular
   .module('odaChallengeApp', [
     'ngAnimate',
     'ngCookies',
@@ -72,4 +72,13 @@ angular
           controller: 'TestjsonCtrl'
         });
         /*$locationProvider.html5Mode(true);*/
+    })
+
+    app.directive('backImg', function(){
+        return function(scope, element, attrs){
+            var url = attrs.backImg;
+            element.css({
+                'background': 'url(' + url +') no-repeat top center fixed',
+            });
+        };
     });

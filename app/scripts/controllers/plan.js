@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name odaChallengeApp.controller:FaqCtrl
+ * @name odaChallengeApp.controller:PlanCtrl
  * @description
- * # FaqCtrl
+ * # PlanCtrl
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('FaqCtrl', ['$scope','$http', '$location', function ($scope, $http, $location) {
+  .controller('PlanCtrl', ['$scope','$http', '$location', function ($scope, $http, $location) {
     $scope.$on('$viewContentLoaded', function(event) {
       $http.get('http://' + $location.host() + ':' + $location.port() + '/json/cgv.json').then(function(response) {
         console.log(response);

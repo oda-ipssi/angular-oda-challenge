@@ -1149,6 +1149,7 @@ Heading
   ul.client-list li {
     border: none;
   }
+<<<<<<< HEAD
   ul.client-list li ul li, ul.client-list li ul li.last {
     width: 100%;
     border: 1px solid #e2e2e2;
@@ -1163,6 +1164,9 @@ Heading
     display: block;
   }
 }
+=======
+
+>>>>>>> 582047f7692eec6bd4d7f03dc4949bad5ef3dad5
 
 /*
 Color

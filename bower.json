@@ -15,7 +15,8 @@
     "components-font-awesome": "^4.6.3",
     "navbar": "^1.0.1",
     "prettyphoto": "*",
-    "flexslider": "^2.6.2"
+    "flexslider": "^2.6.2",
+    "wow": "WOW#^1.1.2"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

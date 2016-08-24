@@ -71,5 +71,5 @@ angular
           templateUrl: 'views/testjson.html',
           controller: 'TestjsonCtrl'
         });
-        $locationProvider.html5Mode(true);
+        /*$locationProvider.html5Mode(true);*/
     });

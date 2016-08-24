@@ -1,8 +1,5 @@
 <p>This is the faq view for authentified user</p>
 
 <div>
-	<div ng-repeat='question in questionList'>
-		<h4>{{question.question}}</h4>
-		<p>{{question.answer}}</p>
-	</div>
+  <p ng-bind-html="pageContent | stringToHtml"></p>
 </div>

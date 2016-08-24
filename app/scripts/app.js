@@ -70,5 +70,30 @@ angular
           url: '/testjson',
           templateUrl: 'views/testjson.html',
           controller: 'TestjsonCtrl'
+        })
+        .state('presentation', {
+          url: '/presentation',
+          templateUrl: 'views/presentation.html',
+          controller: 'PresentationCtrl'
+        })
+        .state('legal', {
+          url: '/legal',
+          templateUrl: 'views/legal.html',
+          controller: 'LegalCtrl'
+        })
+        .state('cgu', {
+          url: '/cgu',
+          templateUrl: 'views/cgu.html',
+          controller: 'CguCtrl'
+        })
+        .state('motivation', {
+          url: '/motivation',
+          templateUrl: 'views/motivation.html',
+          controller: 'MotivationCtrl'
+        })
+        .state('plan', {
+          url: '/plan',
+          templateUrl: 'views/plan.html',
+          controller: 'PlanCtrl'
         });
     });

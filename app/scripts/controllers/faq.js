@@ -8,20 +8,13 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('FaqCtrl', ['$scope','$http', function ($scope, $http) {
-
+  .controller('FaqCtrl', ['$scope','$http', '$location', function ($scope, $http, $location) {
     $scope.$on('$viewContentLoaded', function(event) {
-      event.preventDefault();
-
-      $http.get('http://127.0.0.1:6969/faq.json').then(
-        function (response) {
-          console.log(response.data);
-           $scope.questionList = response.data;
-           //console.log($scope.questionList)
-        },
-        function (response) {
-          console.log(response);
-        });
+      $http.get('http://' + $location.host() + ':' + $location.port() + '/json/cgv.json').then(function(response) {
+        console.log(response);
+        $scope.pageContent = response.data.data.content;
+      }, function(response){
+        console.log(response);
+      });
     });
-
   }]);

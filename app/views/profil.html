@@ -1,0 +1,21 @@
+<form ng-submit="updateProfil()">
+  <!-- Info compte -->
+  <label>Nom : </label><input type="text" ng-model="profil.username">
+  <label>Email : </label><input type="text" ng-model="profil.email">
+  <label>Mot de passe : </label><input type="password" ng-model="profil.password" placeholder="Mot de passe">
+  <label>Confirmation : </label><input type="password" ng-model="profil.passwordConfirm" placeholder="Confirmer mot de passe">
+
+  <!-- Infos personnelles -->
+  <label>Prénom : </label><input type="text" ng-model="profil.firstname">
+  <label>Nom de famille : </label><input type="text" ng-model="profil.lastname">
+  <label>Adresse : </label><input type="text" ng-model="profil.address">
+  <label>Code Postal : </label><input type="text" ng-model="profil.zipcode">
+  <label>Ville : </label><input type="text" ng-model="profil.city">
+  <label>Téléphone : </label><input type="text" ng-model="profil.phone">
+
+  <input type="submit" value="Mettre à jour">
+</form>
+
+<div ng-show="errorMessage">
+  {{ errorMessage }}
+</div>

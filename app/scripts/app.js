@@ -66,6 +66,16 @@ var app = angular
           templateUrl: 'views/inscription.html',
           controller: 'InscriptionCtrl'
         })
+        .state('profil', {
+          url: '/profil',
+          templateUrl: 'views/profil.html',
+          controller: 'ProfilCtrl'
+        })
+        .state('dbmanagement', {
+          url: '/dbmanagement',
+          templateUrl: 'views/dbmanagement.html',
+          controller: 'DbmanagementCtrl'
+        })
         .state('testjson', {
           url: '/testjson',
           templateUrl: 'views/testjson.html',

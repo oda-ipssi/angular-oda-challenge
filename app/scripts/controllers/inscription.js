@@ -11,15 +11,15 @@ angular.module('odaChallengeApp')
   .controller('InscriptionCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.inscriptionSubmit = function() {
       var tem = true;
-      $scope.usernameMessage = false;
-      $scope.emailMessage = false;
-      $scope.passwordMessage = false;
-      $scope.firstnameMessage = false;
-      $scope.lastnameMessage = false;
-      $scope.addressMessage = false;
-      $scope.zipcodeMessage = false;
-      $scope.cityMessage = false;
-      $scope.phoneMessage = false;
+      $scope.usernameMessage    = false;
+      $scope.emailMessage       = false;
+      $scope.passwordMessage    = false;
+      $scope.firstnameMessage   = false;
+      $scope.lastnameMessage    = false;
+      $scope.addressMessage     = false;
+      $scope.zipcodeMessage     = false;
+      $scope.cityMessage        = false;
+      $scope.phoneMessage       = false;
 
       if (typeof $scope.username === 'undefined' || !$scope.username.length) {
         $scope.usernameMessage = 'Veuillez entrer un nom d\'utilisateur';

@@ -21,11 +21,15 @@ var app = angular
     'ui.grid.cellNav',
     'ui.grid.pagination'
   ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
 
       $urlRouterProvider.otherwise('/');
 
       $stateProvider
+
+        /* ====================================================== *\
+         * FRONT PAGES
+        \* ====================================================== */
         .state('home', {
           url: '/',
           templateUrl: 'views/home.html',
@@ -81,6 +85,52 @@ var app = angular
           templateUrl: 'views/testjson.html',
           controller: 'TestjsonCtrl'
         })
+
+        /* ====================================================== *\
+         * ADMIN PAGES
+        \* ====================================================== */
+        .state('admin-dashboard', {
+          url: '/admin',
+          templateUrl: 'views/admin-dashboard.html',
+          controller: 'AdminDashboardCtrl'
+        })
+        .state('users', {
+          url: '/users',
+          templateUrl: 'views/users.html',
+          controller: 'UsersCtrl'
+        })
+        .state('user', {
+          url: '/users/user/:userId',
+          templateUrl: 'views/user.html',
+          controller: 'UserCtrl'
+        })
+        .state('databases', {
+          url: '/databases',
+          templateUrl: 'views/databases.html',
+          controller: 'DatabasesCtrl'
+        })
+        .state('database', {
+          url: '/databases/database/:databaseId',
+          templateUrl: 'views/database.html',
+          controller: 'DatabaseCtrl'
+        })
+        .state('pages', {
+          url: '/pages',
+          templateUrl: 'views/pages.html',
+          controller: 'PagesCtrl'
+        })
+        .state('page', {
+          url: '/pages/page/pageId',
+          templateUrl: 'views/page.html',
+          controller: 'PageCtrl'
+        })
+        .state('analytics', {
+          url: '/analytics',
+          templateUrl: 'views/analytics.html',
+          controller: 'AnalyticsCtrl'
+        })
+      /* ====================================================== *\
+      \* ====================================================== */
         .state('presentation', {
           url: '/presentation',
           templateUrl: 'views/presentation.html',
@@ -106,14 +156,4 @@ var app = angular
           templateUrl: 'views/plan.html',
           controller: 'PlanCtrl'
         });
-        /*$locationProvider.html5Mode(true);*/
-    })
-
-    app.directive('backImg', function(){
-        return function(scope, element, attrs){
-            var url = attrs.backImg;
-            element.css({
-                'background': 'url(' + url +') no-repeat top center fixed',
-            });
-        };
     });

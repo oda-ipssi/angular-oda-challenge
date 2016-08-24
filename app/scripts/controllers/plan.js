@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc function
- * @name odaChallengeApp.controller:FaqCtrl
+ * @name odaChallengeApp.controller:PlanCtrl
  * @description
- * # FaqCtrl
+ * # PlanCtrl
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('FaqCtrl', ['$scope','$http', '$location', function ($scope, $http, $location) {
-
+  .controller('PlanCtrl', ['$scope','$http', '$location', function ($scope, $http, $location) {
+    
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
 
@@ -18,10 +18,11 @@ angular.module('odaChallengeApp')
           console.log(response);
           $scope.pageContent = response.data.data.content;
         },
-        function(response) {
+
+        function(response){
           console.log(response);
         }
       );
     });
-    
+
   }]);

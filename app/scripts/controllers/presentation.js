@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name odaChallengeApp.controller:FaqCtrl
+ * @name odaChallengeApp.controller:PresentationCtrl
  * @description
- * # FaqCtrl
+ * # PresentationCtrl
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('FaqCtrl', ['$scope','$http', '$location', function ($scope, $http, $location) {
+  .controller('PresentationCtrl', ['$scope','$http', '$location', function ($scope, $http, $location) {
 
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
@@ -18,7 +18,7 @@ angular.module('odaChallengeApp')
           console.log(response);
           $scope.pageContent = response.data.data.content;
         },
-        function(response) {
+        function(response){
           console.log(response);
         }
       );

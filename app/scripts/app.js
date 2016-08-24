@@ -70,6 +70,16 @@ angular
           templateUrl: 'views/inscription.html',
           controller: 'InscriptionCtrl'
         })
+        .state('profil', {
+          url: '/profil',
+          templateUrl: 'views/profil.html',
+          controller: 'ProfilCtrl'
+        })
+        .state('dbmanagement', {
+          url: '/dbmanagement',
+          templateUrl: 'views/dbmanagement.html',
+          controller: 'DbmanagementCtrl'
+        })
         .state('testjson', {
           url: '/testjson',
           templateUrl: 'views/testjson.html',
@@ -118,5 +128,32 @@ angular
           url: '/analytics',
           templateUrl: 'views/analytics.html',
           controller: 'AnalyticsCtrl'
+        })
+      /* ====================================================== *\
+      \* ====================================================== */
+        .state('presentation', {
+          url: '/presentation',
+          templateUrl: 'views/presentation.html',
+          controller: 'PresentationCtrl'
+        })
+        .state('legal', {
+          url: '/legal',
+          templateUrl: 'views/legal.html',
+          controller: 'LegalCtrl'
+        })
+        .state('cgu', {
+          url: '/cgu',
+          templateUrl: 'views/cgu.html',
+          controller: 'CguCtrl'
+        })
+        .state('motivation', {
+          url: '/motivation',
+          templateUrl: 'views/motivation.html',
+          controller: 'MotivationCtrl'
+        })
+        .state('plan', {
+          url: '/plan',
+          templateUrl: 'views/plan.html',
+          controller: 'PlanCtrl'
         });
     });

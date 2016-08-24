@@ -1,14 +1,73 @@
-<p>This is the login view.</p>
-
-<div ng-controller="LoginCtrl">
-	<form novalidate class="login-form">
-		<input type="mail" placeholder="Email" ng-model="user.mail" />
-		<input type="password" placeholder="Mot de passe" ng-model="user.pwd" />
-		<input type="submit" ng-click="login(user)" value="Se connecter"/>
-		<p>{{errorMail}}</p>
-		<p>{{errorPwd}}</p>
-	</form>
-
-	<pre>user = {{user | json}}</pre>
-
+<div id="wrapper-fixed">
+	<div class="login-register-wrapper" ng-controller="LoginCtrl">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="login-register">
+						<ul class="nav nav-tabs log-tabs" role="tablist">
+							<li role="presentation"><a href="#Login" role="tab" data-toggle="tab">Connexion</a></li>
+							<li role="presentation" class="active"><a href="#register" role="tab" data-toggle="tab">Inscription</a></li>
+						</ul>
+						<div class="tab-content log-tabs-containt">
+							<div role="tabpanel" class="tab-pane" id="Login">
+								<p>
+									<a href="#" class="soscial-log facebook"><i class="fa fa-facebook"></i> <span>Connexion facebook</span></a>
+								</p>
+								<p>
+									<a href="#" class="soscial-log twitter"><i class="fa fa-twitter"></i> <span>Connexion twitter</span></a>
+								</p>
+								<div class="sparator"><span>or</span></div>
+								<form class="form-horizontal">
+									<div class="form-group">
+										<div class="col-lg-12 text-left">
+											<input type="text" class="form-control form-block" placeholder="Utilisateur">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-lg-12 text-left">
+											<input type="password" class="form-control form-block" placeholder="Mot de passe" ng-model="user.pwd">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-lg-12 text-center">
+											<button class="btn btn-primary btn-lg" ng-click="login(user)">Se connecter</button>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div role="tabpanel" class="tab-pane active" id="register">
+								<p>
+									<a href="#" class="soscial-log facebook"><i class="fa fa-facebook"></i> <span>Connexion facebook</span></a>
+								</p>
+								<p>
+									<a href="#" class="soscial-log twitter"><i class="fa fa-twitter"></i> <span>Connexion twitter</span></a>
+								</p>
+								<div class="sparator"><span>ou</span></div>
+								<form class="form-horizontal">
+									<div class="form-group">
+										<div class="col-lg-12 text-left">
+											<input type="text" class="form-control form-block" placeholder="Utilisateur">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-lg-12 text-left">
+											<input type="text" class="form-control form-block" placeholder="Email" ng-model="user.mail">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-lg-12 text-center">
+											<button class="btn btn-primary btn-lg">S'inscrire</button>
+										</div>
+									</div>
+								</form>
+							</div>
+							<p>{{errorMail}}</p>
+							<p>{{errorPwd}}</p>
+						</div>
+					</div>
+					<pre>user = {{user | json}}</pre>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

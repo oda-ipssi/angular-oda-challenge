@@ -21,7 +21,7 @@ angular
     'ui.grid.cellNav',
     'ui.grid.pagination'
   ])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
       $urlRouterProvider.otherwise('/');
 
@@ -106,4 +106,5 @@ angular
           templateUrl: 'views/plan.html',
           controller: 'PlanCtrl'
         });
+        /*$locationProvider.html5Mode(true);*/
     });

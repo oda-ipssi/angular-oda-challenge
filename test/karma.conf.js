@@ -33,6 +33,7 @@ module.exports = function(config) {
       'bower_components/angular-ui-grid/ui-grid.js',
       'bower_components/navbar/navbar.umd.js',
       'bower_components/flexslider/jquery.flexslider.js',
+      'bower_components/wow/dist/wow.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

@@ -21,9 +21,11 @@ var app = angular
     'ui.grid.cellNav',
     'ui.grid.pagination'
   ])
+
   .config(function ($stateProvider, $urlRouterProvider) {
 
-      $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/');
+
 
       $stateProvider
 

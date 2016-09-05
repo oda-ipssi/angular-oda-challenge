@@ -1,21 +1,16 @@
-<form ng-submit="updateProfil()">
-  <!-- Info compte -->
-  <label>Nom : </label><input type="text" ng-model="profil.username">
-  <label>Email : </label><input type="text" ng-model="profil.email">
-  <label>Mot de passe : </label><input type="password" ng-model="profil.password" placeholder="Mot de passe">
-  <label>Confirmation : </label><input type="password" ng-model="profil.passwordConfirm" placeholder="Confirmer mot de passe">
+<p>This is the profil view.</p>
 
-  <!-- Infos personnelles -->
-  <label>Prénom : </label><input type="text" ng-model="profil.firstname">
-  <label>Nom de famille : </label><input type="text" ng-model="profil.lastname">
-  <label>Adresse : </label><input type="text" ng-model="profil.address">
-  <label>Code Postal : </label><input type="text" ng-model="profil.zipcode">
-  <label>Ville : </label><input type="text" ng-model="profil.city">
-  <label>Téléphone : </label><input type="text" ng-model="profil.phone">
+<!-- Info compte -->
+Nom : {{profil.username}}<br>
+Email : {{profil.email}}<br>
+<br>
+<!-- Infos personnelles -->
+Prénom : {{profil.firstname}}<br>
+Nom de famille : {{profil.lastname}}<br>
+Adresse : {{profil.address}}<br>
+Code Postal : {{profil.zipcode}}<br>
+Ville : {{profil.city}}<br>
+Téléphone : {{profil.phone}}<br>
 
-  <input type="submit" value="Mettre à jour">
-</form>
-
-<div ng-show="errorMessage">
-  {{ errorMessage }}
-</div>
+<a ui-sref="profilUpdate">Modifier le profil</a>
+<a ui-sref="password">Modifier mot de passe</a>

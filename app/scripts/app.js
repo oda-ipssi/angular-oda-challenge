@@ -77,6 +77,16 @@ var app = angular
           templateUrl: 'views/profil.html',
           controller: 'ProfilCtrl'
         })
+        .state('profilUpdate', {
+          url: '/profilupdate',
+          templateUrl: 'views/profilupdate.html',
+          controller: 'ProfilupdateCtrl'
+        })
+        .state('password', {
+          url: '/password',
+          templateUrl: 'views/password.html',
+          controller: 'PasswordCtrl'
+        })
         .state('dbmanagement', {
           url: '/dbmanagement',
           templateUrl: 'views/dbmanagement.html',

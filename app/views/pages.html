@@ -1,1 +1,10 @@
 <p>This is the pages view.</p>
+
+<select  ng-model="url" ng-change="onChange()">
+  <option ng-repeat="page in pages" value="{{ page }}">{{ page.title }}</option>
+</select>
+
+<form method="post" ng-submit="updateContent()">
+  <textarea ui-tinymce ng-model="tinymceModel"></textarea>
+  <input type="submit" value="Valider les modif">
+</form>

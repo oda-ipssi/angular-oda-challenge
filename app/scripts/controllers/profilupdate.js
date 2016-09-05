@@ -64,7 +64,7 @@
 
   			console.log(data);
 
-  		    $http.post('/', data, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).then(function(successResponse) {
+  		    $http.put('http://localhost:8000/account/6', data).then(function(successResponse) {
   		        console.log(successResponse);
   		    }, function(errorResponse) {
   		        console.log(errorResponse);

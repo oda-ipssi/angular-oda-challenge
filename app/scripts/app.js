@@ -19,7 +19,8 @@ var app = angular
     'ui.grid',
     'ui.grid.edit',
     'ui.grid.cellNav',
-    'ui.grid.pagination'
+    'ui.grid.pagination',
+    'ui.tinymce'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {

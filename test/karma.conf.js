@@ -38,6 +38,8 @@ module.exports = function(config) {
       'bower_components/jquery.appear/jquery.appear.js',
       'bower_components/jquery.easing/js/jquery.easing.js',
       'bower_components/ui-to-top/js/jquery.ui.totop.js',
+      'bower_components/tinymce-dist/tinymce.js',
+      'bower_components/angular-ui-tinymce/src/tinymce.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

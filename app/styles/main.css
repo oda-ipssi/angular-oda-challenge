@@ -1283,7 +1283,7 @@ Heading
   ul.client-list li {
     border: none;
   }
-<<<<<<< HEAD
+
   ul.client-list li ul li, ul.client-list li ul li.last {
     width: 100%;
     border: 1px solid #e2e2e2;
@@ -1298,9 +1298,111 @@ Heading
     display: block;
   }
 }
-=======
+/*
+Contact
+=========================== */
+#contact{
+	float:left;
+	width:100%;
+	background-image:url(../img/bg4.jpg);
+	background-position:0 0;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	color:#fff;
+}
 
->>>>>>> 582047f7692eec6bd4d7f03dc4949bad5ef3dad5
+.contact-contain{
+	position:relative;
+	float:left;
+	width:100%;
+	padding:80px 0 80px 0;
+	background-color:rgba(26, 26, 26, 0.95);
+}
+
+ul.listForm{
+	width:100%;
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+ul.listForm li {
+	position:relative;
+	float:left;
+	width:50%;
+	padding:20px 15px 20px 15px;
+	margin:0;
+	list-style:none;
+}
+
+ul.listForm li.push{
+	width:100%;
+	padding-left:30px;
+}
+
+ul.listForm li i{
+	background-color:#1a1a1a;
+	position:absolute;
+	width:66px;
+	height:66px;
+	border-radius:50%;
+	border:2px solid rgba(255, 255, 255, 0.4);
+	color:rgba(255, 255, 255, 0.4);
+	text-align:center;
+	font-size:36px;
+	line-height:60px;
+	top:10px;
+	left:0;
+}
+
+ul.listForm li .form-control:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+ul.listForm li .form-control::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+ul.listForm li .form-control:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+ul.listForm li .form-control::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+ul.listForm li .form-control{
+	border:2px solid rgba(255, 255, 255, 0.4);
+	color: rgba(255, 255, 255, 0.6);
+  height: 50px;
+  padding: 10px 25px 10px 80px;
+	background:none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: none;
+          transition: none
+}
+
+ul.listForm li textarea.form-control{
+	height:240px;
+}
+
+ul.listForm li.push .form-control {
+	padding-left:50px;
+}
+
+#sendmessage{
+	display:none;
+}
+
+#sendmessage.show,.show  {
+	display:block;
+}
+
+.validation{
+	margin-top:10px;
+	font-style:italic;
+}
 
 /*
 Color

@@ -13,12 +13,15 @@
   <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
   <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
   <link rel="stylesheet" href="bower_components/flexslider/flexslider.css" />
+  <link rel="stylesheet" href="bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.css" />
+  <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
+  <link rel="stylesheet" type="text/css" href="styles/flexslider.css">
   <base href="/">
 </head>
 
@@ -68,6 +71,7 @@
   <!-- End header -->
 
   <div ui-view></div>
+
   <div class="clearfix"></div>
   <!-- Start footer -->
   <footer>
@@ -88,7 +92,6 @@
     </div>
   </footer>
   <!-- End footer -->
-
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
     ! function(A, n, g, u, l, a, r) {
@@ -101,6 +104,26 @@
     ga('create', 'UA-XXXXX-X');
     ga('send', 'pageview');
   </script>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+<![endif]-->
+
+  <script type="text/javascript">
+    document.getElementById("loading").className = "loading-visible";
+    var hideDiv = function() {
+      document.getElementById("loading").className = "loading-invisible";
+    };
+    var oldLoad = window.onload;
+    var newLoad = oldLoad ? function() {
+      hideDiv.call(this);
+      oldLoad.call(this);
+    } : hideDiv;
+    window.onload = newLoad;
+  </script>
+  <!-- End preloading -->
 
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
@@ -120,43 +143,47 @@
   <script src="bower_components/wow/dist/wow.js"></script>
   <script src="bower_components/jquery.stellar/jquery.stellar.js"></script>
   <script src="bower_components/jquery.appear/jquery.appear.js"></script>
+  <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
+  <script src="bower_components/ui-to-top/js/jquery.ui.totop.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
-
-
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/home.js"></script>
-        <script src="scripts/controllers/gsc.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/services/ajaxFactory.js"></script>
-        <script src="scripts/controllers/tarif.js"></script>
-        <script src="scripts/controllers/inscription.js"></script>
-        <script src="scripts/controllers/faq.js"></script>
-        <script src="scripts/controllers/support.js"></script>
-        <script src="scripts/controllers/informationrequest.js"></script>
-        <script src="scripts/controllers/testjson.js"></script>
-        <script src="scripts/controllers/profil.js"></script>
-        <script src="scripts/controllers/dbmanagement.js"></script>
-        <script src="scripts/filters/stringtohtml.js"></script>
-        <script src="scripts/controllers/admin-dashboard.js"></script>
-        <script src="scripts/controllers/users.js"></script>
-        <script src="scripts/controllers/user.js"></script>
-        <script src="scripts/controllers/databases.js"></script>
-        <script src="scripts/controllers/database.js"></script>
-        <script src="scripts/controllers/pages.js"></script>
-        <script src="scripts/controllers/page.js"></script>
-        <script src="scripts/controllers/analytics.js"></script>
-        <script src="scripts/controllers/legal.js"></script>
-        <script src="scripts/controllers/presentation.js"></script>
-        <script src="scripts/controllers/cgu.js"></script>
-        <script src="scripts/controllers/motivation.js"></script>
-        <script src="scripts/controllers/plan.js"></script>
-        <script src="scripts/directives/backimg.js"></script>
-        <script src="scripts/controllers/profilupdate.js"></script>
-        <script src="scripts/controllers/password.js"></script>
-        <!-- endbuild -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/home.js"></script>
+  <script src="scripts/controllers/gsc.js"></script>
+  <script src="scripts/controllers/login.js"></script>
+  <script src="scripts/services/ajaxFactory.js"></script>
+  <script src="scripts/controllers/tarif.js"></script>
+  <script src="scripts/controllers/inscription.js"></script>
+  <script src="scripts/controllers/faq.js"></script>
+  <script src="scripts/controllers/support.js"></script>
+  <script src="scripts/controllers/informationrequest.js"></script>
+  <script src="scripts/controllers/testjson.js"></script>
+  <script src="scripts/controllers/profil.js"></script>
+  <script src="scripts/controllers/dbmanagement.js"></script>
+  <script src="scripts/filters/stringtohtml.js"></script>
+  <script src="scripts/controllers/admin-dashboard.js"></script>
+  <script src="scripts/controllers/users.js"></script>
+  <script src="scripts/controllers/user.js"></script>
+  <script src="scripts/controllers/databases.js"></script>
+  <script src="scripts/controllers/database.js"></script>
+  <script src="scripts/controllers/pages.js"></script>
+  <script src="scripts/controllers/page.js"></script>
+  <script src="scripts/controllers/analytics.js"></script>
+  <script src="scripts/controllers/legal.js"></script>
+  <script src="scripts/controllers/presentation.js"></script>
+  <script src="scripts/controllers/cgu.js"></script>
+  <script src="scripts/controllers/motivation.js"></script>
+  <script src="scripts/controllers/plan.js"></script>
+  <script src="scripts/directives/backimg.js"></script>
+  <script src="scripts/controllers/profilupdate.js"></script>
+  <script src="scripts/controllers/password.js"></script>
+  <!-- endbuild -->
+  <script src="scripts/jquery/flexslider.js"></script>
+  <script src="scripts/jquery/jquery.parallax.js"></script>
+  <script src="scripts/jquery/parallax.js"></script>
+  <script src="scripts/jquery/wow.js"></script>
+  <script src="scripts/jquery/totop.js"></script>
 
 </body>
 

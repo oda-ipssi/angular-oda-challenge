@@ -40,6 +40,9 @@ module.exports = function(config) {
       'bower_components/ui-to-top/js/jquery.ui.totop.js',
       'bower_components/tinymce-dist/tinymce.js',
       'bower_components/angular-ui-tinymce/src/tinymce.js',
+      'bower_components/jquery-smooth-scroll/jquery.smooth-scroll.js',
+      'bower_components/waypoints/lib/noframework.waypoints.js',
+      'bower_components/Scroll-To/scrollTo.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

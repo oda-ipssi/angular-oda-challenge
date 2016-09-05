@@ -97,7 +97,11 @@ var app = angular
           templateUrl: 'views/testjson.html',
           controller: 'TestjsonCtrl'
         })
-
+        .state('contact', {
+          url: '/contact',
+          templateUrl: 'views/contact.html',
+          //controller: 'ContactCtrl'
+        })
         /* ====================================================== *\
          * ADMIN PAGES
         \* ====================================================== */

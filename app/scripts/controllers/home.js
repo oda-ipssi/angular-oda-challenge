@@ -17,7 +17,6 @@ angular.module('odaChallengeApp')
   });
 
   (function($) {
-  	'use strict';
         $('.flexslider').flexslider({
           animation: "slide",
   		directionNav: true,

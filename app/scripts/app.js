@@ -111,10 +111,24 @@ var app = angular
         /* ====================================================== *\
          * ADMIN PAGES
         \* ====================================================== */
+        // .state('admin-dashboard', {
+        //   url: '/admin',
+        //   templateUrl: 'views/admin-dashboard.html',
+        //   controller: 'AdminDashboardCtrl'
+        // })
+        //dashboard
         .state('admin-dashboard', {
           url: '/admin',
-          templateUrl: 'views/admin-dashboard.html',
-          controller: 'AdminDashboardCtrl'
+          controller: 'DashboardCtrl',
+          templateUrl: 'views/dashboard/tmpl/dashboard.html',
+          resolve: {
+            plugins: ['$ocLazyLoad', function($ocLazyLoad) {
+              return $ocLazyLoad.load([
+                'scripts/vendor/datatables/datatables.bootstrap.min.css',
+                'scripts/vendor/datatables/datatables.bootstrap.min.css'
+              ]);
+            }]
+          }
         })
         .state('users', {
           url: '/users',

@@ -1,23 +1,23 @@
 'use strict';
 
-describe('Controller: HomeCtrl', function () {
+describe('Controller: CreatedatabaseCtrl', function () {
 
   // load the controller's module
   beforeEach(module('odaChallengeApp'));
 
-  var HomeCtrl,
+  var CreatedatabaseCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    HomeCtrl = $controller('HomeCtrl', {
+    CreatedatabaseCtrl = $controller('CreatedatabaseCtrl', {
       $scope: scope
       // place here mocked dependencies
     });
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(HomeCtrl.awesomeThings.length).toBe(3);
+    expect(CreatedatabaseCtrl.awesomeThings.length).toBe(3);
   });
 });

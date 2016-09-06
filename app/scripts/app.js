@@ -19,7 +19,8 @@ var app = angular
     'ui.grid',
     'ui.grid.edit',
     'ui.grid.cellNav',
-    'ui.grid.pagination'
+    'ui.grid.pagination',
+    'ui.tinymce'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -77,6 +78,16 @@ var app = angular
           templateUrl: 'views/profil.html',
           controller: 'ProfilCtrl'
         })
+        .state('profilUpdate', {
+          url: '/profilupdate',
+          templateUrl: 'views/profilupdate.html',
+          controller: 'ProfilupdateCtrl'
+        })
+        .state('password', {
+          url: '/password',
+          templateUrl: 'views/password.html',
+          controller: 'PasswordCtrl'
+        })
         .state('dbmanagement', {
           url: '/dbmanagement',
           templateUrl: 'views/dbmanagement.html',
@@ -87,7 +98,11 @@ var app = angular
           templateUrl: 'views/testjson.html',
           controller: 'TestjsonCtrl'
         })
-
+        .state('contact', {
+          url: '/contact',
+          templateUrl: 'views/contact.html',
+          //controller: 'ContactCtrl'
+        })
         /* ====================================================== *\
          * ADMIN PAGES
         \* ====================================================== */

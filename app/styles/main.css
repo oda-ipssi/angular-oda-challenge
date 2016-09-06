@@ -1,6 +1,115 @@
 /*
+Color
+=========================== */
+a,
+a:focus,
+a:hover,
+a:active,
+.navbar-default .navbar-nav li a:hover,
+.navbar-default .navbar-nav li a.selected,
+.navbar-default .navbar-nav .active a,
+.navbar-default .navbar-nav .dropdown.active a,
+.navbar-default .navbar-nav .active a:hover,
+.navbar-default .navbar-nav .dropdown.active a:hover,
+.navbar-default .navbar-nav .active a:focus,
+.navbar-default .navbar-nav .dropdown.active a:focus,
+.icon-counter:hover,
+.social-network a:hover,
+.social-network a:focus,
+.social-network a:active,
+.pe-feature,
+.accordion-heading a:hover i,
+.counter-number,
+.pricing-head.popular .pricing-price,
+.validation{
+	color: #f55e25;
+}
+
+/*
+Background color
+=========================== */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary,
+.subscribe-button,
+.navbar-default .navbar-toggle:hover .icon-bar,
+.feature-box:hover .pe-feature,
+.accordion-heading a i,
+.accordion-heading a:hover,
+.flex-direction-nav .flex-next:hover,
+.flex-direction-nav .flex-prev:hover,
+.flex-control-paging li a:hover,
+.flex-control-paging li a.flex-active,
+.pricing-head.popular,
+.owl-theme .owl-controls .owl-buttons div.owl-prev:hover,
+.owl-theme .owl-controls .owl-buttons div.owl-next:hover,
+#toTopHover,
+.log-tabs li a,
+.log-tabs li a:hover,
+.log-tabs li a:focus,
+.log-tabs li a:active{
+	background-color: #f55e25;
+}
+
+/*
+Border color
+=========================== */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary,
+.navbar-default .navbar-nav li a:hover,
+.navbar-default .navbar-nav li a.selected,
+.navbar-default .navbar-nav .active a,
+.navbar-default .navbar-nav .dropdown.active a,
+.navbar-default .navbar-nav .active a:hover,
+.navbar-default .navbar-nav .dropdown.active a:hover,
+.navbar-default .navbar-nav .active a:focus,
+.navbar-default .navbar-nav .dropdown.active a:focus,
+.subscribe-button,
+.testimoni-avatar:hover,
+.icon-counter:hover,
+.form-control:focus,
+ul.listForm li .form-control:focus,
+.navbar-default .navbar-toggle:hover,
+.pe-feature,
+.accordion-heading a i,
+.accordion-heading a:hover{
+	border-color: #f55e25;
+}
+
+/*
+Color on mobile
+=========================== */
+@media (max-width: 767px){
+	.navbar-default .navbar-nav li a:hover,
+	.navbar-default .navbar-nav li a.selected,
+	.navbar-default .navbar-nav .active a,
+	.navbar-default .navbar-nav .dropdown.active a,
+	.navbar-default .navbar-nav .active a:hover,
+	.navbar-default .navbar-nav .dropdown.active a:hover,
+	.navbar-default .navbar-nav .active a:focus,
+	.navbar-default .navbar-nav .dropdown.active a:focus{
+		background:#f55e25;
+		border:1px solid #f55e25;
+		color:#fff;
+	}
+}
+
+
+
+
+
+/*
 Typography
 =========================== */
+
+
 
 body {
   background: #fff;
@@ -140,7 +249,7 @@ Navbar
   padding: 0;
 }
 .navbar-brand {
-  padding: 23px 0 23px 0;
+  padding: 2% 0 23px 0;
   margin: 0;
 }
 .navbar-default .collapse {
@@ -633,6 +742,31 @@ Pricing table
   padding: 25px 20px 25px 20px;
   text-align: center;
 }
+
+/*
+Pixeden icon setting
+=========================== */
+.pe-feature{
+	float:left;
+	margin:5px 20px 60px 0;
+	width:65px;
+	height:65px;
+	font-size:38px;
+	line-height:58px;
+	text-align:center;
+	border:2px solid;
+	border-radius:50%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+ -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-box:hover .pe-feature{
+	color:#fff;
+}
+
 
 /*
   Ui to top
@@ -1161,7 +1295,7 @@ Heading
   ul.client-list li {
     border: none;
   }
-  
+
   ul.client-list li ul li, ul.client-list li ul li.last {
     width: 100%;
     border: 1px solid #e2e2e2;
@@ -1176,6 +1310,195 @@ Heading
     display: block;
   }
 }
+
+/*
+Contact
+=========================== */
+#contact{
+	float:left;
+	width:100%;
+	background-image:url(../img/bg4.jpg);
+	background-position:0 0;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	color:#fff;
+}
+
+.contact-contain{
+	position:relative;
+	float:left;
+	width:100%;
+	padding:80px 0 80px 0;
+	background-color:rgba(26, 26, 26, 0.95);
+}
+
+ul.listForm{
+	width:100%;
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+ul.listForm li {
+	position:relative;
+	float:left;
+	width:50%;
+	padding:20px 15px 20px 15px;
+	margin:0;
+	list-style:none;
+}
+
+ul.listForm li.push{
+	width:100%;
+	padding-left:30px;
+}
+
+ul.listForm li i{
+	background-color:#1a1a1a;
+	position:absolute;
+	width:66px;
+	height:66px;
+	border-radius:50%;
+	border:2px solid rgba(255, 255, 255, 0.4);
+	color:rgba(255, 255, 255, 0.4);
+	text-align:center;
+	font-size:36px;
+	line-height:60px;
+	top:10px;
+	left:0;
+}
+
+ul.listForm li .form-control:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+ul.listForm li .form-control::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+ul.listForm li .form-control:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+ul.listForm li .form-control::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+ul.listForm li .form-control{
+	border:2px solid rgba(255, 255, 255, 0.4);
+	color: rgba(255, 255, 255, 0.6);
+  height: 50px;
+  padding: 10px 25px 10px 80px;
+	background:none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: none;
+          transition: none
+}
+
+ul.listForm li textarea.form-control{
+	height:240px;
+}
+
+ul.listForm li.push .form-control {
+	padding-left:50px;
+}
+
+#sendmessage{
+	display:none;
+}
+
+#sendmessage.show,.show  {
+	display:block;
+}
+
+.validation{
+	margin-top:10px;
+	font-style:italic;
+}
+
+/*
+Download
+=========================== */
+#download{
+	background-image:url(../img/bg3.jpg);
+	background-position:0 0;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	text-align:center;
+	font-size:24px;
+	line-height:36px;
+	color:#fff;
+}
+
+#download h3{
+	margin-bottom:20px;
+	color:#fff;
+	font-size:48px;
+	line-height:56px;
+	text-transform:uppercase;
+}
+
+.download-wrapper{
+	background:rgba(26, 26, 26, 0.95);
+	padding:80px 0 80px 0;
+}
+
+.subscribe-form{
+	display:inline-block;
+	background:rgba(255, 255, 255, 0.2);
+	width:75%;
+	position:relative;
+	margin:0 auto;
+	margin-top:20px;
+	padding:5px;
+	border-radius:40px;
+}
+
+input.subscribe{
+	position:relative;
+	width:100%;
+	height:60px;
+	border:none;
+	background:rgba(255, 255, 255, 0.95);
+	padding:10px 20px 10px 20px;
+	border-radius:40px;
+	color:#444444;
+	font-size:18px;
+	line-height:18px;
+}
+
+input.subscribe:-moz-placeholder {
+  color: #5c5c5c;
+}
+
+input.subscribe::-moz-placeholder {
+  color: #5c5c5c;
+}
+
+input.subscribe:-ms-input-placeholder {
+  color: #5c5c5c;
+}
+
+input.subscribe::-webkit-input-placeholder {
+  color: #5c5c5c;
+}
+
+.subscribe-button{
+	position:absolute;
+	text-transform:uppercase;
+	font-size: 18px;
+	line-height:18px;
+	font-weight:700;
+	padding: 10px 40px;
+	height:60px;
+	overflow:hidden;
+	border:3px solid;
+	border-radius:0 40px 40px 0;
+	right:5px;
+	top:5px;
+}
+>>>>>>> 1d858d7bbb6617edbc2f7a7a245c65a825835668
 
 /*
 Color

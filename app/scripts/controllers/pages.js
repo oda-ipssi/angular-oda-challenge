@@ -14,20 +14,19 @@ angular.module('odaChallengeApp')
 
       $http.get('http://localhost:8000/content/all').then(
         function(response) {
-          console.log(response);
            $scope.pages = response.data.data;
-           console.log($scope.pages);
         },
-
         function(response) {
-          console.log(response);
+
         });
     });
 
     $scope.onChange = function() {
-      $scope.url = JSON.parse($scope.url);
-      $scope.tinymceModel = $scope.url.content;
-      console.log($scope.url);
+      if ($scope.url !== null) {
+        $scope.tinymceModel = $scope.url.content;
+      } else {
+        $scope.tinymceModel = '';
+      }
     };
 
     $scope.updateContent = function() {
@@ -43,8 +42,16 @@ angular.module('odaChallengeApp')
 
       $http.post('http://localhost:8000/content' + $scope.url.url + '/update', data).then(function(successResponse) {
           console.log(successResponse);
+
+          $http.get('http://localhost:8000/content/all').then(
+            function(response) {
+               $scope.pages = response.data.data;
+            },
+            function(response) {
+
+            });
       }, function(errorResponse) {
-          console.log(errorResponse);
+
       });
     };
   }]);

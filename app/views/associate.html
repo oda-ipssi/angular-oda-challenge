@@ -1,0 +1,145 @@
+
+
+<!-- Trigger the modal with a button -->
+
+<div class="container">
+  <div class="navbar-right">
+    <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Open Modal</a>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nom</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(key, value) in associates">
+        <th></th>
+        <td>{{ value.username }}</td>
+        <td>{{ value.email }}</td>
+        <td><button ng-click="deleteAssociate(value.id)" class="btn btn-primary">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ajouter un associé</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal ng-pristine ng-valid" ng-submit="associateSubmit()">
+          <div class="form-group">
+            <div class="col-lg-12 text-left">
+              <div class="alert alert-danger" ng-show="usernameMessage">
+                {{ usernameMessage }}
+              </div>
+              <input type="text" class="form-control form-block" ng-model="username" placeholder="Nom d'utilisateur">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-12 text-left">
+              <div class="alert alert-danger" ng-show="emailMessage">
+                {{ emailMessage }}
+              </div>
+              <input type="email" class="form-control form-block ng-pristine ng-untouched ng-valid ng-empty" placeholder=" Adresse Email" ng-model="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-12 text-left">
+              <div class="alert alert-danger" ng-show="passwordMessage">
+                {{ passwordMessage }}
+              </div>
+              <input type="password" class="form-control form-block" ng-model="password" placeholder="Mot de passe">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-12 text-left">
+              <input type="password" class="form-control form-block" ng-model="passwordConfirm" placeholder="Confirmer mot de passe">
+            </div>
+          </div>
+          
+          <!-- Infos personnelles -->
+
+          <div class="form-group">
+            <div class="col-lg-12 text-left">
+              <div class="alert alert-danger" ng-show="firstnameMessage">
+                {{ firstnameMessage }}
+              </div>
+              <input type="text" class="form-control form-block" ng-model="firstname" placeholder="Prénom">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-12 text-left">
+              <div class="alert alert-danger" ng-show="lastnameMessage">
+                {{ lastnameMessage }}
+              </div>
+              <input type="text" class="form-control form-block" ng-model="lastname" placeholder="Nom de famille">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-12 text-left">
+              <div class="alert alert-danger" ng-show="addressMessage">
+                {{ addressMessage }}
+              </div>
+              <input type="text" class="form-control form-block" ng-model="address" placeholder="Adresse">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-12 text-left">
+              <div class="alert alert-danger" ng-show="zipcodeMessage">
+                {{ zipcodeMessage }}
+              </div>
+              <input type="text" class="form-control form-block" ng-model="zipcode" placeholder="Code postal">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-12 text-left">
+              <div class="alert alert-danger" ng-show="cityMessage">
+                {{ cityMessage }}
+              </div>
+              <input type="text" class="form-control form-block" ng-model="city" placeholder="Ville">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-12 text-left">
+              <div class="alert alert-danger" ng-show="phoneMessage">
+                {{ phoneMessage }}
+              </div>
+              <input type="tel" class="form-control form-block" ng-model="phone" placeholder="Téléphone">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-12 text-center">
+              <input type="submit" value="Envoyer" class="btn btn-primary btn-lg">
+            </div>
+          </div>
+        </form>
+        <form >
+
+
+
+        </form>
+
+      </div>
+      <div class="modal-footer navbar-default">
+        <button type="button" class="btn btn-bordered" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

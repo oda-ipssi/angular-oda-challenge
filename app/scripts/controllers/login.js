@@ -8,9 +8,9 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('LoginCtrl', ['$scope','$http', function ($scope, $http) {
+  .controller('LoginCtrl', ['$scope','$http', '$rootScope', function ($scope, $http, $rootScope) {
 
-    $scope.master = {};
+    var data = {};
     $scope.user = {};
 
     $scope.login = function(user) {
@@ -19,19 +19,27 @@ angular.module('odaChallengeApp')
 
       var check = true;
 
-      if( !user.mail || user.mail === '' ) {
+      if( !user.email || user.email === '' ) {
         $scope.errorMail = 'Merci de renseigner votre adresse mail';
         check = false;
       }
 
-      if( !user.pwd || user.pwd === '' ) {
+      if( !user.password || user.password === '' ) {
         $scope.errorPwd = 'Merci de renseigner votre mot de passe';
         check = false;
       }
 
       if( check === true ) {
-        $http.post('http://localhost:8000/login', user);
-      }
+        data = {
+          data: user
+        };
 
+        $http.post('http://localhost:8000/sign-in', data).then(function(successResponse) {
+          console.log(successResponse);
+          $rootScope.idSession = successResponse.data.idSession;
+          $rootScope.token = successResponse.data.token;
+        }, function(errorResponse) {
+        });
+      }
     };
   }]);

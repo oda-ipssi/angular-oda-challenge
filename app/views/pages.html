@@ -1,7 +1,6 @@
 <p>This is the pages view.</p>
 
-<select  ng-model="url" ng-change="onChange()">
-  <option ng-repeat="page in pages" value="{{ page }}">{{ page.title }}</option>
+<select  ng-model="url" ng-change="onChange()" ng-options="page.title for page in pages track by page.content">
 </select>
 
 <form method="post" ng-submit="updateContent()">

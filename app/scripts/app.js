@@ -102,6 +102,11 @@ var app = angular
           templateUrl: 'views/contact.html',
           //controller: 'ContactCtrl'
         })
+        .state('associate', {
+          url: '/associate',
+          templateUrl: 'views/associate.html',
+          controller: 'AssociateCtrl'
+        })
         /* ====================================================== *\
          * ADMIN PAGES
         \* ====================================================== */

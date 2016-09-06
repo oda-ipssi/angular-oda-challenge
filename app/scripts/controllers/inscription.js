@@ -89,7 +89,7 @@ angular.module('odaChallengeApp')
             city: $scope.city,
             phone: $scope.phone
           }
-      }
+      };
 
       $http.post('http://localhost:8000/registration', dataStructured).then(function(successResponse) {
         console.log(successResponse);

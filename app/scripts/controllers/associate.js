@@ -117,7 +117,7 @@
               city: $scope.city,
               phone: $scope.phone
             }
-        }
+        };
 
         $http.post('http://localhost:8000/associate', dataStructured).then(function(successResponse) {
           console.log(successResponse);

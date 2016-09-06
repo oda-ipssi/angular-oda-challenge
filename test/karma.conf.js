@@ -32,7 +32,6 @@ module.exports = function(config) {
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-ui-grid/ui-grid.js',
       'bower_components/navbar/navbar.umd.js',
-      'bower_components/flexslider/jquery.flexslider.js',
       'bower_components/wow/dist/wow.js',
       'bower_components/jquery.stellar/jquery.stellar.js',
       'bower_components/jquery.appear/jquery.appear.js',

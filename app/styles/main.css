@@ -508,8 +508,9 @@ Button
   background-color: #444444;
   border-color: #444444;
 }
-.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open> .dropdown-toggle.btn-default {
-  color: #fff;
+
+.gray-bg{
+	background:#f9f9f9;
 }
 .btn-bordered.btn-default {
   background: none;
@@ -917,6 +918,17 @@ Heading
 	margin-bottom:60px;
 }
 
+.pricing-bottom{
+	background:#fff;
+	border:1px solid #e2e2e2;
+	border-radius:0 0 10px 10px;
+	border-top:none;
+	float:left;
+	width:100%;
+	margin:0;
+	padding:25px 20px 25px 20px;
+	text-align:center;
+}
 .heading span{
 	display:block;
 	font-weight:400;
@@ -1298,13 +1310,14 @@ Heading
     display: block;
   }
 }
+
 /*
 Contact
 =========================== */
 #contact{
 	float:left;
 	width:100%;
-	background-image:url(../img/bg4.jpg);
+	background-image:url(../img/figure-black-and-white-polygon.jpg);
 	background-position:0 0;
 	background-repeat:no-repeat;
 	background-attachment:fixed;
@@ -1485,6 +1498,7 @@ input.subscribe::-webkit-input-placeholder {
 	right:5px;
 	top:5px;
 }
+>>>>>>> 1d858d7bbb6617edbc2f7a7a245c65a825835668
 
 /*
 Color

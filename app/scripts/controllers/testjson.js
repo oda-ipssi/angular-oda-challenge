@@ -50,6 +50,24 @@ angular.module('odaChallengeApp')
                 columnDef.enableCellEdit = true;
               }
 
+              // Listener on change grid value
+              tbDatas.opts.onRegisterApi = function(gridApi) {
+                //set gridApi on scope
+                $scope.gridApi = gridApi;
+                gridApi.edit.on.afterCellEdit($scope, function(rowEntity, colDef, newValue, oldValue) {
+                  //Do your REST call here via $http.get or $http.post
+                  if(newValue !== oldValue) {
+                    console.log('ID de la colonne modifiée : ' + rowEntity.id);
+                    console.log('Colonne modifiée : ' + colDef.name);
+                    console.log('Ancienne valeure : ' + oldValue);
+                    console.log('Nouvelle valeure : ' + newValue);
+                    console.log('Dans la base de donnée : '+ database.name);
+                    console.log('Et dans la table : '+ tbDatas.name);
+                    console.log(rowEntity);
+                  }
+                });
+              };
+
               // Push column definition
               tbDatas.opts.columnDefs.push(columnDef);
             });
@@ -60,6 +78,8 @@ angular.module('odaChallengeApp')
           // Push grid options in tab
           $scope.gridsDatas.push(dbDatas);
         });
+
+        console.log($scope);
       },
 
       function(error) {

@@ -77,19 +77,21 @@ angular.module('odaChallengeApp')
         return false;
       }
 
-      var data = {
-        username: $scope.username,
-        email: $scope.email,
-        password: $scope.password,
-        firstname: $scope.firstname,
-        lastname: $scope.lastname,
-        address: $scope.address,
-        zipcode: $scope.zipcode,
-        city: $scope.city,
-        phone: $scope.phone
-      };
+      var dataStructured = {
+          'data' : {
+            username: $scope.username,
+            email: $scope.email,
+            password: $scope.password,
+            firstname: $scope.firstname,
+            lastname: $scope.lastname,
+            address: $scope.address,
+            zipcode: $scope.zipcode,
+            city: $scope.city,
+            phone: $scope.phone
+          }
+      }
 
-      $http.post('/', data, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).then(function(successResponse) {
+      $http.post('http://localhost:8000/registration', dataStructured).then(function(successResponse) {
         console.log(successResponse);
       }, function(errorResponse) {
         console.log(errorResponse);

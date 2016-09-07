@@ -10,17 +10,19 @@
  */
 var app = angular
   .module('odaChallengeApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ngTouch',
-    'ui.router',
-    'ui.grid',
-    'ui.grid.edit',
-    'ui.grid.cellNav',
-    'ui.grid.pagination',
-    'ui.tinymce'
+      'ngAnimate',
+      'ngCookies',
+      'ngResource',
+      'ngSanitize',
+      'ngTouch',
+      'ui.router',
+      'ui.grid',
+      'ui.grid.edit',
+      'ui.grid.cellNav',
+      'ui.grid.pagination',
+      'ui.tinymce',
+      'angular-momentjs',
+      'ngMessages'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -116,20 +118,14 @@ var app = angular
         //   templateUrl: 'views/admin-dashboard.html',
         //   controller: 'AdminDashboardCtrl'
         // })
-        //dashboard
+
+        // Dashboard
         .state('admin-dashboard', {
           url: '/admin',
-          controller: 'DashboardCtrl',
-          templateUrl: 'views/dashboard/tmpl/dashboard.html',
-          resolve: {
-            plugins: ['$ocLazyLoad', function($ocLazyLoad) {
-              return $ocLazyLoad.load([
-                'scripts/vendor/datatables/datatables.bootstrap.min.css',
-                'scripts/vendor/datatables/datatables.bootstrap.min.css'
-              ]);
-            }]
-          }
+          templateUrl: 'views/admin-dashboard.html',
+          controller: 'DashboardCtrl'
         })
+
         .state('users', {
           url: '/users',
           templateUrl: 'views/users.html',

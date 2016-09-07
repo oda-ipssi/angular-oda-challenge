@@ -12,7 +12,7 @@ angular.module('odaChallengeApp')
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
 
-      $http.get('http://localhost:8000/content/all').then(
+      $http.get('http://localhost:8000/contents').then(
         function(response) {
            $scope.pages = response.data.data;
         },
@@ -43,7 +43,7 @@ angular.module('odaChallengeApp')
       $http.post('http://localhost:8000/content' + $scope.url.url + '/update', data).then(function(successResponse) {
           console.log(successResponse);
 
-          $http.get('http://localhost:8000/content/all').then(
+          $http.get('http://localhost:8000/contents').then(
             function(response) {
                $scope.pages = response.data.data;
             },

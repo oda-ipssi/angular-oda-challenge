@@ -88,6 +88,16 @@ var app = angular
           templateUrl: 'views/password.html',
           controller: 'PasswordCtrl'
         })
+        .state('abonnement', {
+          url: '/abonnement',
+          templateUrl: 'views/abonnement.html',
+          controller: 'AbonnementCtrl'
+        })
+        .state('desabonnement', {
+          url: '/desabonnement',
+          templateUrl: 'views/desabonnement.html',
+          controller: 'DesabonnementCtrl'
+        })
         .state('dbmanagement', {
           url: '/dbmanagement',
           templateUrl: 'views/dbmanagement.html',

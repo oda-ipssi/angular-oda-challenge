@@ -7,7 +7,35 @@
 			</div>
 		</div>
 		<div class="row wow fadeInDown" data-wow-delay="0.4s">
-			<div class="col-md-4">
+
+			<div class="col-md-4" ng-repeat="tarif in tarifList | orderBy:'id'">
+				<div class="pricing-wrapper">
+					<div class="pricing-head">
+						<span class="pricing-price">{{ tarif.price }}€</span>
+						<h4>{{ tarif.title }}</h4>
+						<p>Fonctionnalités limitées</p>
+					</div>
+					<ul ng-bind-html="tarif.description | stringToHtml">
+					</ul>
+					<div class="pricing-bottom">
+						<a ng-show="root.token" href="#" class="btn btn-default btn-bordered btn-lg">Sélectionner</a>
+						<a ng-hide="root.token" href="#" class="btn btn-default btn-bordered btn-lg">S'inscrire</a>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- <div class="col-md-4">
 				<div class="pricing-wrapper">
 					<div class="pricing-head">
 						<span class="pricing-price">0€</span>
@@ -66,7 +94,7 @@
 						<a href="#" class="btn btn-primary btn-lg subscribe-button">SOUSCRIRE</a>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>

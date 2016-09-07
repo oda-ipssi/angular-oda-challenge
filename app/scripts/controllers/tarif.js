@@ -8,7 +8,7 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('TarifCtrl', ['$scope','$http', '$rootScope', function ($scope, $http, $rootScope) {
+  .controller('TarifCtrl', ['$scope','$http', '$rootScope', function ($scope, $http) {
 
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();

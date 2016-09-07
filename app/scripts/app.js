@@ -8,14 +8,14 @@
  *
  * Main module of the application.
  */
-var app = angular
+angular
   .module('odaChallengeApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router',
+    'ui.router', 
     'ui.grid',
     'ui.grid.edit',
     'ui.grid.cellNav',

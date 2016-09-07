@@ -1,13 +1,19 @@
+<label for="table-name">Table name:</label>
+<input type="text" id="table-name" name="table-name" ng-model="tableName">
+<br>
+<hr>
+
 <select ng-change="setFieldType()" ng-model="fieldId">
   <option ng-repeat="(id, fieldType) in fieldTypes" ng-value="id">{{fieldType.name}}</option>
 </select>
 <br>
+
 <div id="fieldDefinition">
   <form>
     <div>
       <h5>Field definition</h5>
       <label for="field-name">Field name:</label>
-      <input type="text" name="field-name" id="field-name">
+      <input type="text" name="field-name" id="field-name" ng-model="fieldName">
       <br>
       Field type: {{currentFieldType.name}}
     </div>
@@ -27,6 +33,7 @@
       <div ng-repeat="fieldParam in currentFieldType.params">
         {{fieldParam.name}}
         <input type="text" ng-if="fieldParam.controlType === 'string'" id="field-param-{{fieldParam.name}}" ng-model="fieldParam.val">
+        <input type="number" ng-if="fieldParam.controlType === 'integer'" id="field-param-{{fieldParam.name}}" ng-model="fieldParam.val">
         <input type="checkbox" ng-if="fieldParam.controlType === 'boolean'" id="field-param-{{fieldParam.name}}" ng-model="fieldParam.val" checked="{{fieldParam.val}}">
       </div>
     </div>

@@ -46,6 +46,7 @@ module.exports = function(config) {
       'bower_components/angular-momentjs/angular-momentjs.js',
       'bower_components/rickshaw/rickshaw.js',
       'bower_components/angular-messages/angular-messages.js',
+      'bower_components/flexslider/jquery.flexslider.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

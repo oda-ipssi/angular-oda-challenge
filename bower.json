@@ -28,7 +28,8 @@
     "Scroll-To": "*",
     "angular-momentjs": "~0.2.2",
     "rickshaw": "~1.5.1",
-    "angular-messages": "1.4.6"
+    "angular-messages": "1.4.6",
+    "flexslider": "~2.6.2"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
   <link rel="stylesheet" href="bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.css" />
   <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+  <link rel="stylesheet" href="bower_components/flexslider/flexslider.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -61,8 +62,7 @@
             <li><a id="GoToContact" href="#/contact">Contact</a></li>
           </ul>
           <div class="navbar-right">
-            <a href="#/login#Login" class="btn btn-bordered">Connexion</a>
-            <a href="#/login" class="btn btn-primary">Enregistrement</a>
+            <a ui-sref="login" class="btn btn-bordered">S'identifier</a>
           </div>
         </div>
         <!--/.nav-collapse -->
@@ -154,6 +154,7 @@
   <script src="bower_components/angular-momentjs/angular-momentjs.js"></script>
   <script src="bower_components/rickshaw/rickshaw.js"></script>
   <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/flexslider/jquery.flexslider.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -188,33 +189,10 @@
   <script src="scripts/controllers/password.js"></script>
   <script src="scripts/controllers/createdatabase.js"></script>
   <script src="scripts/controllers/associate.js"></script>
-
-  <!-- Dashboard -->
   <script src="scripts/controllers/admin-dashboard.js"></script>
-  <!-- <script src="scripts/controllers/dashboard/main.js"></script>
-  <script src="scripts/controllers/dashboard/dashboard.js"></script>
-  <script src="scripts/controllers/dashboard/daterangepicker.js"></script>
-  <script src="scripts/directives/daterangepicker.js"></script>
-  <script src="scripts/directives/tilecontrolclose.js"></script>
-  <script src="scripts/directives/tilecontroltoggle.js"></script>
-  <script src="scripts/directives/tilecontrolrefresh.js"></script>
-  <script src="scripts/directives/tilecontrolfullscreen.js"></script>
-  <script src="scripts/directives/prettyprint.js"></script>
-  <script src="scripts/controllers/dashboard/ui-lists.js"></script>
-  <script src="scripts/directives/lazymodel.js"></script>
-  <script src="scripts/controllers/dashboard/ui-buttonsicons.js"></script>
-  <script src="scripts/directives/activatebutton.js"></script>
-  <script src="scripts/controllers/dashboard/ui-navs.js"></script>
-  <script src="scripts/controllers/dashboard/ui-modals.js"></script>
-  <script src="scripts/controllers/dashboard/ui-tiles.js"></script>
-  <script src="scripts/directives/todofocus.js"></script>
-  <script src="scripts/directives/todoescape.js"></script>
-  <script src="scripts/directives/clock.js"></script> -->
-
-
-
+  <script src="scripts/controllers/abonnement.js"></script>
+  <script src="scripts/controllers/desabonnement.js"></script>
   <!-- endbuild -->
-  <script src="scripts/jquery/jquery.flexslider.js"></script>
   <script src="scripts/jquery/flexslider.js"></script>
   <script src="scripts/jquery/jquery.parallax.js"></script>
   <script src="scripts/jquery/parallax.js"></script>

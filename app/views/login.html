@@ -5,27 +5,23 @@
 				<div class="col-md-12 text-center">
 					<div class="login-register">
 						<ul class="nav nav-tabs log-tabs" role="tablist">
-							<li role="presentation"><a href="#Login" role="tab" data-toggle="tab">Connexion</a></li>
-							<li role="presentation" class="active"><a href="#register" role="tab" data-toggle="tab">Inscription</a></li>
+							<li role="presentation"><a href="login/#Login" role="tab" data-toggle="tab">Connexion</a></li>
+							<li role="presentation" class="active"><a href="login/#register" role="tab" data-toggle="tab">Inscription</a></li>
 						</ul>
 						<div class="tab-content log-tabs-containt">
-							<div role="tabpanel" class="tab-pane" id="Login">
-								<p>
-									<a href="#" class="soscial-log facebook"><i class="fa fa-facebook"></i> <span>Connexion facebook</span></a>
-								</p>
-								<p>
-									<a href="#" class="soscial-log twitter"><i class="fa fa-twitter"></i> <span>Connexion twitter</span></a>
-								</p>
-								<div class="sparator"><span>or</span></div>
+							<!-- LOGIN -->
+							<div role="tabpanel" class="tab-pane" id="Login" ng-controller="LoginCtrl">
 								<form class="form-horizontal">
 									<div class="form-group">
 										<div class="col-lg-12 text-left">
-											<input type="text" class="form-control form-block" placeholder="Utilisateur">
+											<input type="text" class="form-control form-block" placeholder="Mail" ng-model="user.email">
+											<p class="help-block" ng-show="errorMail">{{ errorMail }}</p>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-lg-12 text-left">
-											<input type="password" class="form-control form-block" placeholder="Mot de passe" ng-model="user.pwd">
+											<input type="password" class="form-control form-block" placeholder="Mot de passe" ng-model="user.password">
+											<p class="help-block" ng-show="errorPwd">{{ errorPwd }}</p>
 										</div>
 									</div>
 									<div class="form-group">
@@ -35,50 +31,86 @@
 									</div>
 								</form>
 							</div>
-							<div role="tabpanel" class="tab-pane active" id="register">
-								<p>
-									<a href="#" class="soscial-log facebook"><i class="fa fa-facebook"></i> <span>Connexion facebook</span></a>
-								</p>
-								<p>
-									<a href="#" class="soscial-log twitter"><i class="fa fa-twitter"></i> <span>Connexion twitter</span></a>
-								</p>
-								<div class="sparator"><span>ou</span></div>
-								<form class="form-horizontal">
-									<div class="form-group">
-										<div class="col-lg-12 text-left">
-											<input type="text" class="form-control form-block" placeholder="Utilisateur">
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-lg-12 text-left">
-											<input type="text" class="form-control form-block" placeholder="Email" ng-model="user.mail">
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-lg-12 text-center">
-											<button class="btn btn-primary btn-lg">S'inscrire</button>
-										</div>
-									</div>
-								</form>
+							<!-- REGISTER -->
+							<div role="tabpanel" class="tab-pane active" id="register" ng-controller="InscriptionCtrl">
+								<form ng-submit="inscriptionSubmit()" class="form-horizontal">
+		              <!-- Info compte -->
+		              <div class="form-group">
+		                <div class="col-lg-12 text-left">
+		                  <input type="text" class="form-control form-block" ng-model="username" placeholder="Nom d'utilisateur">
+											<p class="help-block" ng-show="usernameMessage">{{ usernameMessage }}</p>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-lg-12 text-left">
+		                  <input type="text" class="form-control form-block" ng-model="email" placeholder="Adresse email">
+											<p class="help-block" ng-show="emailMessage">{{ emailMessage }}</p>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-lg-12 text-left">
+		                  <input type="password" class="form-control form-block" ng-model="password" placeholder="Mot de passe">
+											<p class="help-block" ng-show="passwordMessage">{{ passwordMessage }}</p>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-lg-12 text-left">
+		                  <input type="password" class="form-control form-block" ng-model="passwordConfirm" placeholder="Confirmer mot de passe">
+		                </div>
+		              </div>
+
+
+		              <div class="sparator"><span>Informations personnelles</span></div>
+		              <!-- Infos personnelles -->
+
+		              <div class="form-group">
+		                <div class="col-lg-12 text-left">
+		                  <input type="text" class="form-control form-block" ng-model="lastname" placeholder="Nom de famille">
+											<p class="help-block" ng-show="firstnameMessage">{{ firstnameMessage }}</p>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-lg-12 text-left">
+		                  <input type="text" class="form-control form-block" ng-model="firstname" placeholder="Prénom">
+											<p class="help-block" ng-show="lastnameMessage">{{ lastnameMessage }}</p>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-lg-12 text-left">
+		                  <input type="text" class="form-control form-block" ng-model="address" placeholder="Adresse">
+											<p class="help-block" ng-show="addressMessage">{{ addressMessage }}</p>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-lg-12 text-left">
+		                  <input type="text" class="form-control form-block" ng-model="zipcode" placeholder="Code postal">
+											<p class="help-block" ng-show="zipcodeMessage">{{ zipcodeMessage }}</p>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-lg-12 text-left">
+		                  <input type="text" class="form-control form-block" ng-model="city" placeholder="Ville">
+											<p class="help-block" ng-show="cityMessage">{{ cityMessage }}</p>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-lg-12 text-left">
+		                  <input type="text" class="form-control form-block" ng-model="phone" placeholder="Téléphone">
+											<p class="help-block" ng-show="phoneMessage">{{ phoneMessage }}</p>
+		                </div>
+		              </div>
+
+		              <div class="form-group">
+		                <div class="col-lg-12 text-center">
+		                  <button class="btn btn-primary btn-lg" value="Envoyer">S'inscrire</button>
+		                </div>
+		              </div>
+		            </form>
 							</div>
-							<p>{{errorMail}}</p>
-							<p>{{errorPwd}}</p>
 						</div>
 					</div>
-					<pre>user = {{user | json}}</pre>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
-<form ng-submit="login(user)">
-	<input type="text" placeholder="Mail" ng-model="user.email">
-	<input type="password" placeholder="Password" ng-model="user.password">
-	<input type="submit" value="Se connecter">
-</form>
-
-</div>
-<p>{{errorMail}}</p>
-<p>{{errorPwd}}</p>
 </div>

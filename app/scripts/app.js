@@ -151,6 +151,12 @@ var app = angular
           templateUrl: 'views/analytics.html',
           controller: 'AnalyticsCtrl'
         })
+        .state('createdatabase', {
+          url: '/createdatabase',
+          templateUrl: 'views/createdatabase.html',
+          controller: 'CreatedatabaseCtrl',
+          controllerAs: 'createdatabase'
+        })
       /* ====================================================== *\
       \* ====================================================== */
         .state('presentation', {

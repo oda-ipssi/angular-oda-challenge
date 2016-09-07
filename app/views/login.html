@@ -73,3 +73,14 @@
 		</div>
 	</div>
 </div>
+
+<form ng-submit="login(user)">
+	<input type="text" placeholder="Mail" ng-model="user.email">
+	<input type="password" placeholder="Password" ng-model="user.password">
+	<input type="submit" value="Se connecter">
+</form>
+
+</div>
+<p>{{errorMail}}</p>
+<p>{{errorPwd}}</p>
+</div>

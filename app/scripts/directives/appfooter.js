@@ -6,7 +6,7 @@
  * @description
  * # appFooter
  */
- app.directive('appFooter', function() {
+ angular.directive('appFooter', function() {
    return {
      restrict: 'E',
      template: '<p class="footer">&copy; {{ footer.date | date:"yyyy" }} ODA Challenge</p>',

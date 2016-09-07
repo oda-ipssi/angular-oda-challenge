@@ -9,13 +9,13 @@
  * Main module of the application.
  */
 angular
-  .module('odaChallengeApp', [ 
+  .module('odaChallengeApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router',
+    'ui.router', 
     'ui.grid',
     'ui.grid.edit',
     'ui.grid.cellNav',

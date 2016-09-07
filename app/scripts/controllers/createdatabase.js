@@ -9,13 +9,16 @@
  */
 angular.module('odaChallengeApp')
   .controller('CreatedatabaseCtrl', function ($scope, $http) {
+    $scope.tableName = '';
+    $scope.fieldName = '';
+
     $scope.fieldTypes = [
         {
             'name': 'integer',
             'attributes': [
                 'unsigned'
             ],
-            params: [
+            'params': [
               {
                 'name' : 'ai',
                 'controlType' : 'boolean'
@@ -28,7 +31,12 @@ angular.module('odaChallengeApp')
             'attributes': [
                 'unsigned'
             ],
-            'ai' : 'boolean',
+            'params': [
+              {
+                'name' : 'ai',
+                'controlType' : 'boolean'
+              }
+            ],
             'controlType' : 'number'
         },
         {
@@ -36,7 +44,12 @@ angular.module('odaChallengeApp')
             'attributes': [
                 'unsigned'
             ],
-            'ai' : 'boolean',
+            'params': [
+              {
+                'name' : 'ai',
+                'controlType' : 'boolean'
+              }
+            ],
             'controlType' : 'number'
         },
         {
@@ -44,7 +57,12 @@ angular.module('odaChallengeApp')
             'attributes': [
                 'unsigned'
             ],
-            'ai' : 'boolean',
+            'params': [
+              {
+                'name' : 'ai',
+                'controlType' : 'boolean'
+              }
+            ],
             'controlType' : 'number'
         },
         {
@@ -52,7 +70,12 @@ angular.module('odaChallengeApp')
             'attributes': [
                 'unsigned'
             ],
-            'ai' : 'boolean',
+            'params': [
+              {
+                'name' : 'ai',
+                'controlType' : 'boolean'
+              }
+            ],
             'controlType' : 'number'
         },
         {
@@ -61,24 +84,57 @@ angular.module('odaChallengeApp')
         },
         {
             'name': 'double',
-            'digits': 10,
-            'precision': 5,
+            'params': [
+              {
+                'name' : 'digits',
+                'controlType' : 'integer',
+                'default' : 10
+              },
+              {
+                'name' : 'precision',
+                'controlType' : 'integer',
+                'default' : 5
+              }
+            ],
             'controlType' : 'number'
         },
         {
             'name': 'decimal',
-            'digits': 10,
-            'precision': 5,
+            'params': [
+              {
+                'name' : 'digits',
+                'controlType' : 'integer',
+                'default' : 10
+              },
+              {
+                'name' : 'precision',
+                'controlType' : 'integer',
+                'default' : 5
+              }
+            ],
             'controlType' : 'number'
         },
         {
             'name': 'string',
             'length': 50,
+            'params': [
+              {
+                'name' : 'length',
+                'controlType' : 'integer',
+                'default' : 50
+              }
+            ],
             'controlType' : 'string'
         },
         {
             'name': 'char',
-            'length': 10,
+            'params': [
+              {
+                'name' : 'length',
+                'controlType' : 'integer',
+                'default' : 50
+              }
+            ],
             'controlType' : 'string'
         },
         {
@@ -172,11 +228,11 @@ angular.module('odaChallengeApp')
     $scope.tableParams = [
       {
         'name' : 'timestamps',
-        'name': 'boolean'
+        'controlType': 'boolean'
       },
       {
         'name' : 'soft-deletes',
-        'name': 'boolean'
+        'controlType': 'boolean'
       }
     ];
 
@@ -185,7 +241,7 @@ angular.module('odaChallengeApp')
     $scope.currentFieldType = '';
 
     $scope.database = {
-      'db': 'testDb',
+      'tableName': '',
       'fields': {}
     };
 
@@ -210,21 +266,22 @@ angular.module('odaChallengeApp')
     };
 
     $scope.addField = function() {
-      if(typeof jQuery('#field-name').val() !== 'string') {
+      if(!$scope.tableName.length) {
+        throw new Error('Table name must be a string');
+      }
+      else if(!$scope.fieldName.length) {
         throw new Error('Field name must be a string');
       }
       else {
-        var fieldName = jQuery('#field-name').val();
+        $scope.database.tableName = $scope.tableName;
 
-        $scope.database.fields[ fieldName ] = {
+        $scope.database.fields[ $scope.fieldName ] = {
           'type' : $scope.currentFieldType.name
         };
 
         for(var i in $scope.currentFieldType.params) {
-          $scope.database.fields[ fieldName ][ $scope.currentFieldType.params[i].name ] = $scope.currentFieldType.params[i].val
+          $scope.database.fields[ $scope.fieldName ][ $scope.currentFieldType.params[i].name ] = $scope.currentFieldType.params[i].val;
         }
-
-        console.log($scope.database);
 
         $scope.fieldId = 0;
         $scope.currentFieldType = '';
@@ -232,13 +289,13 @@ angular.module('odaChallengeApp')
     };
 
     $scope.createDb = function() {
-      $http.post('127.0.0.1:8000/', {data: $scope.database}).then(
-        function() {
-
+      $http.post('http://127.0.0.1:8000/table/test', $scope.database).then(
+        function(success) {
+          console.log('success:', success);
         },
 
-        function() {
-
+        function(error) {
+          console.log('error:',error);
         }
       );
 

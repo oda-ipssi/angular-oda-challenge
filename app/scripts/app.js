@@ -8,8 +8,8 @@
  *
  * Main module of the application.
  */
-var app = angular
-  .module('odaChallengeApp', [
+angular
+  .module('odaChallengeApp', [ 
     'ngAnimate',
     'ngCookies',
     'ngResource',

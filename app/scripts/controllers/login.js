@@ -34,12 +34,16 @@ angular.module('odaChallengeApp')
           data: user
         };
 
-        $http.post('http://localhost:8000/sign-in', data).then(function(successResponse) {
+        $http.post('http://localhost:8000/sign-in', data).then(
+          function(successResponse) {
           console.log(successResponse);
           $rootScope.idSession = successResponse.data.idSession;
-          $rootScope.token = successResponse.data.token;
-        }, function(errorResponse) {
-        });
+            $rootScope.token = successResponse.data.token;
+          },
+          function(errorResponse) {
+            console.log('Error:', errorResponse);
+          }
+      );
       }
     };
   }]);

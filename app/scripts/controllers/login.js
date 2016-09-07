@@ -39,6 +39,7 @@ angular.module('odaChallengeApp')
           $rootScope.idSession = successResponse.data.idSession;
           $rootScope.token = successResponse.data.token;
         }, function(errorResponse) {
+          console.log(errorResponse);
         });
       }
     };

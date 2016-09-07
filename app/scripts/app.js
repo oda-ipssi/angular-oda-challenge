@@ -41,7 +41,6 @@ var app = angular
         .state('login', {
           url: '/login',
           templateUrl: 'views/login.html',
-          controller: 'LoginCtrl'
         })
         .state('reqInfo', {
           url: '/reqInfo',
@@ -67,11 +66,6 @@ var app = angular
           url: '/support',
           templateUrl: 'views/support.html',
           controller: 'SupportCtrl'
-        })
-        .state('inscription', {
-          url: '/inscription',
-          templateUrl: 'views/inscription.html',
-          controller: 'InscriptionCtrl'
         })
         .state('profil', {
           url: '/profil',

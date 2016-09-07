@@ -8,7 +8,7 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('GscCtrl', ['$scope','$http', '$location', function ($scope, $http, $location) {
+  .controller('GscCtrl', ['$scope','$http', function ($scope, $http) {
 
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();

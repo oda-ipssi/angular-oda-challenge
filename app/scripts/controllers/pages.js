@@ -48,10 +48,10 @@ angular.module('odaChallengeApp')
                $scope.pages = response.data.data;
             },
             function(response) {
-
+              console.log(response);
             });
       }, function(errorResponse) {
-        console.log(errorResponse);
+          console.log(errorResponse);
       });
     };
   }]);

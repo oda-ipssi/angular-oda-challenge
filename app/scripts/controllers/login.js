@@ -37,9 +37,13 @@ angular.module('odaChallengeApp')
         $http.post('http://localhost:8000/sign-in', data).then(
           function(successResponse) {
             console.log(successResponse);
-            $rootScope.idSession = successResponse.data.idSession;
-            $rootScope.token = successResponse.data.token;
-            $cookies.putObject('odaLogin', { token: successResponse.data.token, idSession: successResponse.data.idSession });
+            var user = {
+              token: successResponse.data.token,
+              idSession: successResponse.data.idSession,
+              idUser: successResponse.data.user.id
+            };
+            $rootScope.user = user;
+            $cookies.putObject('odaLogin', user);
             $location.path('/');
           },
           function(errorResponse) {

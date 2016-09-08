@@ -22,6 +22,24 @@ angular.module('odaChallengeApp')
         function(response) {
           console.log(response);
         });
+
+      $http.get('http://localhost:8000/subscription?token='+$rootScope.user.token).then(
+        function(response) {
+          if(response.data){
+            var offerId = response.data.data.order[(response.data.data.order.length)-1].offer_id;
+            var offerStatus = response.data.data.order[0].status;
+
+            if(offerStatus !== 3) {
+              $scope.aboEnCours = offerId;
+              console.log(offerId)
+            }
+          }
+        },
+        function(response){
+          console.log(response);
+        }
+      );
+
     });
 
     $scope.subscribe = function(id){
@@ -34,28 +52,35 @@ angular.module('odaChallengeApp')
       data.data.offerId = id;
       //data.data.Order = null;
 
-      $http.get('http://127.0.0.1:8000/subscription?token='+$rootScope.user.token).then(
+      $http.get('http://localhost:8000/subscription?token='+ $rootScope.user.token).then(
         function(response) {
-          console.log(response);
           if(!response.data){
-            $http.post('http://127.0.0.1:8000/subscription?token=' + $rootScope.user.token, data).then(function(successResponse) {
-                console.log(successResponse);
-            }, function(errorResponse) {
-                console.log(errorResponse);
-            });
+            if(id !== 1){
+              window.location.href ='http://localhost:8000/checkout/'+id+'?token='+$rootScope.user.token;
+            }
+            else {
+              $http.post('http://localhost:8000/subscription?token=' + $rootScope.user.token, data).then(function(successResponse) {
+                  console.log(successResponse);
+              }, function(errorResponse) {
+                  console.log(errorResponse);
+              });
+            }
           }
           else {
 
             var orderId = response.data.data.order[0].id;
-            console.log(orderId);
-            console.log(data);
-            $http.put('http://127.0.0.1:8000/subscription/' + orderId + '?token=' + $rootScope.user.token, data).then(function(successResponse) {
-              console.log(successResponse);
-          }, function(errorResponse) {
-              console.log(errorResponse);
-          });
+            console.log(id);
+            if(id !== 1){
+              window.location.href ='http://localhost:8000/checkout/'+id+'?token='+$rootScope.user.token;
+            }
+            else{
+              $http.put('http://localhost:8000/subscription/' + orderId + '?token=' + $rootScope.user.token, data).then(function(successResponse) {
+                console.log(successResponse);
+            }, function(errorResponse) {
+                console.log(errorResponse);
+            });
+            }
           }
-
 
         },
         function(response){
@@ -63,7 +88,7 @@ angular.module('odaChallengeApp')
         }
       );
 
-      
+
     }
 
   }]);

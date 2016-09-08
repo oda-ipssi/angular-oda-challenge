@@ -1,9 +1,29 @@
-<p>This is the pages view.</p>
+<div class="container">
+    <div class="pageheader">
 
-<select  ng-model="url" ng-change="onChange()" ng-options="page.title for page in pages track by page.content">
-</select>
+      <h2>Pages <span>//Liste</span></h2>
 
-<form method="post" ng-submit="updateContent()">
-  <textarea ui-tinymce ng-model="tinymceModel"></textarea>
-  <input type="submit" value="Valider les modif">
-</form>
+      <div class="page-bar">
+
+        <ul class="page-breadcrumb">
+          <li>
+            <a ui-sref="admin-dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+          </li>
+          <li>
+            <a ui-sref="admin-dashboard">{{page.title}}</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <select  ng-model="url" ng-change="onChange()" ng-options="page.title for page in pages track by page.content">
+    </select>
+
+    <form method="post" ng-submit="updateContent()">
+      <textarea ui-tinymce ng-model="tinymceModel"></textarea>
+      <input type="submit" value="Valider les modif">
+    </form>
+
+</div>

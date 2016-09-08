@@ -57,12 +57,17 @@
           <a class="navbar-brand" href="#"><img src="/img/logo.png" alt="Logo de nous" /></a>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav" ng-if="!user.token">
             <li><a id="GoToHome" href="/" class="selected">Accueil</a></li>
             <li><a id="GoToFeatures" href="#/caracteristiques">Caractéristiques</a></li>
             <li><a id="GoToPricing" href="#/tarif">Prix</a></li>
             <li><a id="GoToFAQ" href="#/faq">FAQ</a></li>
             <li><a id="GoToContact" href="#/contact">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav" ng-if="user.token">
+            <li><a id="GoToHome" ui-sref="home" class="selected">Accueil</a></li>
+            <li><a id="GoToDb" ui-sref="databases">Bases de données</a></li>
+            <li><a id="GoToProfil" ui-sref="profil">Profil</a></li>
           </ul>
           <div class="navbar-right">
             <a ui-sref="login" class="btn btn-bordered" ng-hide="user.token">S'identifier</a>
@@ -210,6 +215,7 @@
   <script src="scripts/controllers/abonnement.js"></script>
   <script src="scripts/controllers/desabonnement.js"></script>
   <script src="scripts/controllers/logout.js"></script>
+  <script src="scripts/controllers/showdatabase.js"></script>
   <!-- endbuild -->
   <script src="scripts/jquery/flexslider.js"></script>
   <script src="scripts/jquery/jquery.parallax.js"></script>

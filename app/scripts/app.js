@@ -166,7 +166,7 @@ angular
           controller: 'DatabasesCtrl'
         })
         .state('database', {
-          url: '/databases/database/:databaseId',
+          url: '/databases/database/:dbname',
           templateUrl: 'views/database.html',
           controller: 'DatabaseCtrl'
         })

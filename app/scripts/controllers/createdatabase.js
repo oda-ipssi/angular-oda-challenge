@@ -8,7 +8,7 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('CreatedatabaseCtrl', function ($scope, $http) {
+  .controller('CreatedatabaseCtrl', function ($scope, $http, $state) {
     $scope.tableName = '';
     $scope.fieldName = '';
 
@@ -289,12 +289,13 @@ angular.module('odaChallengeApp')
     };
 
     $scope.createDb = function() {
-      $http.post('http://127.0.0.1:8000/table/test', $scope.database).then(
-        function(success) {
-          console.log('success:', success);
+      $http.post('http://127.0.0.1:8000/create/table', {'data': $scope.database}).then(
+        function(successCreateDb) {
+          window.alert('Table created !');
+          $state.go('databases');
         },
 
-        function(error) {
+        function(errorCreateDb) {
           console.log('error:',error);
         }
       );

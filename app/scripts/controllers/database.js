@@ -15,7 +15,7 @@ angular.module('odaChallengeApp')
     $scope.dbName     = false;
 
     var getDbDatas = function(_jsonDatas) {
-      $http.post('http://127.0.0.1:8000/get-data/user-table', {'data':_jsonDatas}).then(
+      $http.post('http://api-yoda4.it-akademy.com/get-data/user-table', {'data':_jsonDatas}).then(
         function(successGetDbDatas) {
           $scope.dbDtas = successGetDbDatas.data.data;
 

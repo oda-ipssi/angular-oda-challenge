@@ -12,12 +12,12 @@ angular.module('odaChallengeApp')
 
   	$scope.desabo = function(){
 
-  		$http.get('http://127.0.0.1:8000/subscription?token='+$rootScope.user.token).then(
+  		$http.get('http://api-yoda4.it-akademy.com/subscription?token='+$rootScope.user.token).then(
         function(response) {
           console.log(response);
           var orderId = response.data.data.order[0].id;
           console.log(orderId);
-          $http.put('http://127.0.0.1:8000/subscription/'+orderId+'/stop?token='+$rootScope.user.token).then(
+          $http.put('http://api-yoda4.it-akademy.com/subscription/'+orderId+'/stop?token='+$rootScope.user.token).then(
               function(response) {
                 console.log(response);
                 window.alert('Votre désabonnement a été pris en compte.');

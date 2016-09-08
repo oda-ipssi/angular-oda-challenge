@@ -98,16 +98,16 @@ angular.module('odaChallengeApp')
         }
       };
 
-      $http.post('http://127.0.0.1:8000/registration', dataStructured).then(function(successResponse) {
+      $http.post('http://api-yoda4.it-akademy.com/registration', dataStructured).then(function(successResponse) {
         console.log(successResponse);
-        $http.post('http://127.0.0.1:8000/sign-in', dataLogin).then(function(successResponse) {
+        $http.post('http://api-yoda4.it-akademy.com/sign-in', dataLogin).then(function(successResponse) {
           console.log(successResponse);
           $rootScope.user = {
             token: successResponse.data.token,
             idSession: successResponse.data.idSession,
             idUser: successResponse.data.user.id
           };
-          $http.get('http://localhost:8000/is-admin?token=' + $rootScope.user.token).then(
+          $http.get('http://api-yoda4.it-akademy.com/is-admin?token=' + $rootScope.user.token).then(
             function(response) {
               console.log(response);
               $rootScope.user.isAdmin = response.data.data.is_admin;

@@ -9,7 +9,7 @@
  */
 angular.module('odaChallengeApp')
   .controller('LogoutCtrl', ['$scope', '$http', '$rootScope', '$cookies', '$state', function ($scope, $http, $rootScope, $cookies, $state) {
-    $http.get('http://127.0.0.1:8000/logout?token=' + $rootScope.user.token).then(
+    $http.get('http://api-yoda4.it-akademy.com/logout?token=' + $rootScope.user.token).then(
       function(response) {
         console.log(response);
         $cookies.remove('odaLogin');

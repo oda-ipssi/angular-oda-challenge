@@ -8,7 +8,7 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('LoginCtrl', ['$scope','$http', '$rootScope', function ($scope, $http, $rootScope) {
+  .controller('LoginCtrl', ['$scope','$http', '$rootScope', '$cookies', '$location',  function ($scope, $http, $rootScope, $cookies, $location) {
 
     var data = {};
     $scope.user = {};
@@ -39,6 +39,8 @@ angular.module('odaChallengeApp')
             console.log(successResponse);
             $rootScope.idSession = successResponse.data.idSession;
             $rootScope.token = successResponse.data.token;
+            $cookies.putObject('odaLogin', { token: successResponse.data.token, idSession: successResponse.data.idSession });
+            $location.path('/');
           },
           function(errorResponse) {
             console.log('Error:', errorResponse);

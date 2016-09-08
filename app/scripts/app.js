@@ -15,7 +15,7 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router', 
+    'ui.router',
     'ui.grid',
     'ui.grid.edit',
     'ui.grid.cellNav',
@@ -188,4 +188,12 @@ angular
           templateUrl: 'views/plan.html',
           controller: 'PlanCtrl'
         });
-    });
+    })
+    .run(['$cookies', '$rootScope', function($cookies, $rootScope) {
+      $rootScope.token      = false;
+      $rootScope.idSession  = false;
+      if ($cookies.getObject('odaLogin')) {
+        $rootScope.token      = $cookies.getObject('odaLogin').token;
+        $rootScope.idSession  = $cookies.getObject('odaLogin').tokenidSession;
+      }
+    }]);

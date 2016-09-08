@@ -15,8 +15,8 @@ angular.module('odaChallengeApp')
 
       $http.get('http://localhost:8000/subscription?token='+$rootScope.user.token).then(
         function(response) {
-          var offerId = response.data.data.order[0].offer_id;
-          var offerStatus = response.data.data.order[0].status;
+          var offerId = response.data.data.order[(response.data.data.order.length)-1].offer_id;
+          var offerStatus = response.data.data.order[(response.data.data.order.length)-1].status;
           $http.get('http://localhost:8000/offers/'+offerId).then(
               function(response) {
                 console.log(response);

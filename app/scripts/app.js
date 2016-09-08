@@ -29,6 +29,7 @@ angular
 
   .config(function ($stateProvider, $urlRouterProvider) {
 
+
     $urlRouterProvider.otherwise('/');
 
 
@@ -134,6 +135,11 @@ angular
           url: '/admin/tarifs',
           templateUrl: 'views/tarifs.html',
           controller: 'TarifsCtrl'
+        })
+        .state('editTarif', {
+          url: '/admin/editTarif/:tarifId',
+          templateUrl: 'views/edittarif.html',
+          controller: 'EdittarifCtrl'
         })
         .state('admin-dashboard', {
           url: '/admin',

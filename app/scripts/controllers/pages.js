@@ -8,12 +8,13 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('PagesCtrl', ['$scope', '$http', function ($scope, $http) {
+  .controller('PagesCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
 
-      $http.get('http://localhost:8000/contents').then(
+      $http.get('http://localhost:8000/admin/contents?token=' + $rootScope.user.token).then(
         function(response) {
+          console.log(response);
            $scope.pages = response.data.data;
         },
         function(response) {
@@ -38,12 +39,12 @@ angular.module('odaChallengeApp')
         }
       };
 
-      console.log('http://localhost:8000/content' + $scope.url.url + '/update');
+      console.log('http://localhost:8000/admin/content' + $scope.url.url + '/update?token=' + $rootScope.user.token);
 
-      $http.post('http://localhost:8000/content' + $scope.url.url + '/update', data).then(function(successResponse) {
+      $http.post('http://localhost:8000/admin/content' + $scope.url.url + '/update?token=' + $rootScope.user.token, data).then(function(successResponse) {
           console.log(successResponse);
 
-          $http.get('http://localhost:8000/contents').then(
+          $http.get('http://localhost:8000/admin/contents?token=' + $rootScope.user.token).then(
             function(response) {
                $scope.pages = response.data.data;
             },

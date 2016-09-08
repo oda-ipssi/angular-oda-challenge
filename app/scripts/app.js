@@ -200,10 +200,8 @@ angular
         });
     })
     .run(['$cookies', '$rootScope', function($cookies, $rootScope) {
-      $rootScope.token      = false;
-      $rootScope.idSession  = false;
+      $rootScope.user = false;
       if ($cookies.getObject('odaLogin')) {
-        $rootScope.token      = $cookies.getObject('odaLogin').token;
-        $rootScope.idSession  = $cookies.getObject('odaLogin').tokenidSession;
+        $rootScope.user = $cookies.getObject('odaLogin');
       }
     }]);

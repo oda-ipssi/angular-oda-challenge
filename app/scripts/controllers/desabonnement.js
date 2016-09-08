@@ -15,13 +15,13 @@ angular.module('odaChallengeApp')
   		$http.post('http://localhost:8000/desabonnement/6').then(
         function(response) {
           console.log(response);
-          alert("Votre désabonnement a été pris en compte");
-          $location.path( "/abonnement" );
+          window.alert('Votre désabonnement a été pris en compte');
+          $location.path('/abonnement');
         },
         function(response){
           console.log(response);
         }
       );
-  	}
+  	};
 
   }]);

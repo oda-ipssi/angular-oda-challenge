@@ -78,7 +78,7 @@ angular.module('odaChallengeApp')
       }
 
       var dataStructured = {
-          'data' : {
+          data : {
             username: $scope.username,
             email: $scope.email,
             password: $scope.password,
@@ -91,8 +91,22 @@ angular.module('odaChallengeApp')
           }
       };
 
+      var dataLogin = {
+        data: {
+          email: $scope.email,
+          password: $scope.password
+        }
+      };
+
       $http.post('http://localhost:8000/registration', dataStructured).then(function(successResponse) {
         console.log(successResponse);
+        $http.post('http://localhost:8000/sign-in', dataLogin).then(function(successResponse) {
+          console.log(successResponse);
+          $rootScope.idSession = successResponse.data.idSession;
+          $rootScope.token = successResponse.data.token;
+        }, function(errorResponse) {
+          console.log(errorResponse);
+        });
       }, function(errorResponse) {
         console.log(errorResponse);
       });

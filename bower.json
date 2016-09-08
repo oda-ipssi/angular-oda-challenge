@@ -26,6 +26,9 @@
     "jquery-smooth-scroll": "~1.7.2",
     "waypoints": "~4.0.1",
     "Scroll-To": "*",
+    "angular-momentjs": "~0.2.2",
+    "rickshaw": "~1.5.1",
+    "angular-messages": "1.4.6",
     "flexslider": "~2.6.2"
   },
   "devDependencies": {

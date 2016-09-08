@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-var app = angular
+angular
   .module('odaChallengeApp', [
     'ngAnimate',
     'ngCookies',
@@ -20,7 +20,9 @@ var app = angular
     'ui.grid.edit',
     'ui.grid.cellNav',
     'ui.grid.pagination',
-    'ui.tinymce'
+    'ui.tinymce',
+    'angular-momentjs',
+    'ngMessages'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -41,7 +43,6 @@ var app = angular
         .state('login', {
           url: '/login',
           templateUrl: 'views/login.html',
-          controller: 'LoginCtrl'
         })
         .state('reqInfo', {
           url: '/reqInfo',
@@ -68,11 +69,6 @@ var app = angular
           templateUrl: 'views/support.html',
           controller: 'SupportCtrl'
         })
-        .state('inscription', {
-          url: '/inscription',
-          templateUrl: 'views/inscription.html',
-          controller: 'InscriptionCtrl'
-        })
         .state('profil', {
           url: '/profil',
           templateUrl: 'views/profil.html',
@@ -87,6 +83,16 @@ var app = angular
           url: '/password',
           templateUrl: 'views/password.html',
           controller: 'PasswordCtrl'
+        })
+        .state('abonnement', {
+          url: '/abonnement',
+          templateUrl: 'views/abonnement.html',
+          controller: 'AbonnementCtrl'
+        })
+        .state('desabonnement', {
+          url: '/desabonnement',
+          templateUrl: 'views/desabonnement.html',
+          controller: 'DesabonnementCtrl'
         })
         .state('dbmanagement', {
           url: '/dbmanagement',
@@ -111,11 +117,19 @@ var app = angular
         /* ====================================================== *\
          * ADMIN PAGES
         \* ====================================================== */
+        // .state('admin-dashboard', {
+        //   url: '/admin',
+        //   templateUrl: 'views/admin-dashboard.html',
+        //   controller: 'AdminDashboardCtrl'
+        // })
+
+        // Dashboard
         .state('admin-dashboard', {
           url: '/admin',
           templateUrl: 'views/admin-dashboard.html',
-          controller: 'AdminDashboardCtrl'
+          controller: 'DashboardCtrl'
         })
+
         .state('users', {
           url: '/users',
           templateUrl: 'views/users.html',

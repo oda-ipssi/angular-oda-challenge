@@ -9,16 +9,15 @@
 */
 angular.module('odaChallengeApp')
 
-.controller('DashboardCtrl', function($scope,$http){
+.controller('DashboardCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope){
     $scope.page = {
         title: 'Dashboard',
         subtitle: 'ODA4'
     };
 
 
-
     $scope.getUsers = function(){
-        $http.get('http://localhost:8000/admin/dashboard/active-users?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzI2ODYyLCJleHAiOjE0NzMzMzA0NjIsIm5iZiI6MTQ3MzMyNjg2MiwianRpIjoiZDZlMTJiMjljYjU3ODgxMTVlYTBkODhjNGExYmJjNzcifQ.oZ5YWpQku80APR4QRfTgTajev1dk8WZfBsOsnAUNJm8wWnCSxkuJS9YL77S_uz6-be26nIilicee-6sZAV_Mfw').then(
+        $http.get('http://localhost:8000/admin/dashboard/active-users?token='+$rootScope.user.token).then(
           function(response) {
              $scope.users_number = Number(response.data.data.number);
              $scope.total_admin = Number(response.data.data.total_admin);
@@ -30,7 +29,7 @@ angular.module('odaChallengeApp')
           });
     };
     $scope.getCommandes = function(){
-        $http.get('http://localhost:8000/admin/dashboard/valid-orders?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzI2ODYyLCJleHAiOjE0NzMzMzA0NjIsIm5iZiI6MTQ3MzMyNjg2MiwianRpIjoiZDZlMTJiMjljYjU3ODgxMTVlYTBkODhjNGExYmJjNzcifQ.oZ5YWpQku80APR4QRfTgTajev1dk8WZfBsOsnAUNJm8wWnCSxkuJS9YL77S_uz6-be26nIilicee-6sZAV_Mfw').then(
+        $http.get('http://localhost:8000/admin/dashboard/valid-orders?token='+$rootScope.user.token).then(
           function(response) {
               console.log(response.data.data);
              $scope.commandes_number = response.data.data.number;
@@ -49,7 +48,7 @@ angular.module('odaChallengeApp')
 
     $scope.getUsers();
     $scope.getCommandes();
-})
+}])
 
 .controller('RealtimeLoadCtrl', function($scope, $interval){
     $scope.options1 = {

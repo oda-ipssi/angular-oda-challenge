@@ -15,12 +15,14 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router', 
+    'ui.router',
     'ui.grid',
     'ui.grid.edit',
     'ui.grid.cellNav',
     'ui.grid.pagination',
-    'ui.tinymce'
+    'ui.tinymce',
+    'angular-momentjs',
+    'ngMessages'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -115,11 +117,19 @@ angular
         /* ====================================================== *\
          * ADMIN PAGES
         \* ====================================================== */
+        // .state('admin-dashboard', {
+        //   url: '/admin',
+        //   templateUrl: 'views/admin-dashboard.html',
+        //   controller: 'AdminDashboardCtrl'
+        // })
+
+        // Dashboard
         .state('admin-dashboard', {
           url: '/admin',
           templateUrl: 'views/admin-dashboard.html',
-          controller: 'AdminDashboardCtrl'
+          controller: 'DashboardCtrl'
         })
+
         .state('users', {
           url: '/users',
           templateUrl: 'views/users.html',

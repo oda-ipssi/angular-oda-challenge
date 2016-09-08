@@ -42,6 +42,10 @@ module.exports = function(config) {
       'bower_components/jquery-smooth-scroll/jquery.smooth-scroll.js',
       'bower_components/waypoints/lib/noframework.waypoints.js',
       'bower_components/Scroll-To/scrollTo.js',
+      'bower_components/moment/moment.js',
+      'bower_components/angular-momentjs/angular-momentjs.js',
+      'bower_components/rickshaw/rickshaw.js',
+      'bower_components/angular-messages/angular-messages.js',
       'bower_components/flexslider/jquery.flexslider.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower

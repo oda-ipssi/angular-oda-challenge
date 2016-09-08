@@ -1,14 +1,475 @@
-<ul>
-  <li>
-    <a ui-sref="users">Users</a>
-  </li>
-  <li>
-    <a ui-sref="databases">Databases</a>
-  </li>
-  <li>
-    <a ui-sref="pages">Pages</a>
-  </li>
-  <li>
-    <a ui-sref="analytics">Analytics</a>
-  </li>
-</ul>
+<div class="page page-dashboard">
+
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="home"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a ui-sref="admin-dashboard">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <!-- cards row -->
+  <div class="row">
+
+    <!-- col -->
+    <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+      <div class="card">
+        <div class="front bg-greensea">
+
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-xs-4">
+              <i class="fa fa-users fa-4x"></i>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-xs-8">
+              <p class="text-elg text-strong mb-0">3 659</p>
+              <span>Utilisateurs</span>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+
+        </div>
+        <div class="back bg-greensea">
+
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-xs-4">
+              <a href=javascript:;><i class="fa fa-cog fa-2x"></i> Lien 1</a>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-xs-4">
+              <a href=javascript:;><i class="fa fa-chain-broken fa-2x"></i> Lien 2</a>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-xs-4">
+              <a href=javascript:;><i class="fa fa-ellipsis-h fa-2x"></i> Lien 3</a>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+
+        </div>
+      </div>
+    </div>
+    <!-- /col -->
+
+    <!-- col -->
+    <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+      <div class="card">
+        <div class="front bg-lightred">
+
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-xs-4">
+              <i class="fa fa-shopping-cart fa-4x"></i>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-xs-8">
+              <p class="text-elg text-strong mb-0">19 364</p>
+              <span>Commandes</span>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+
+        </div>
+        <div class="back bg-lightred">
+
+          <!-- row -->
+          <div class="row">
+              <!-- col -->
+              <div class="col-xs-4">
+                <a href=javascript:;><i class="fa fa-cog fa-2x"></i> Lien 1</a>
+              </div>
+              <!-- /col -->
+              <!-- col -->
+              <div class="col-xs-4">
+                <a href=javascript:;><i class="fa fa-chain-broken fa-2x"></i> Lien 2</a>
+              </div>
+              <!-- /col -->
+              <!-- col -->
+              <div class="col-xs-4">
+                <a href=javascript:;><i class="fa fa-ellipsis-h fa-2x"></i> Lien 3</a>
+              </div>
+              <!-- /col -->
+          </div>
+          <!-- /row -->
+
+        </div>
+      </div>
+    </div>
+    <!-- /col -->
+
+    <!-- col -->
+    <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+      <div class="card">
+        <div class="front bg-blue">
+
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-xs-4">
+              <i class="fa fa-usd fa-4x"></i>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-xs-8">
+              <p class="text-elg text-strong mb-0">165 984</p>
+              <span>Abonnements</span>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+
+        </div>
+        <div class="back bg-blue">
+
+          <!-- row -->
+          <div class="row">
+              <!-- col -->
+              <div class="col-xs-4">
+                <a href=javascript:;><i class="fa fa-cog fa-2x"></i> Lien 1</a>
+              </div>
+              <!-- /col -->
+              <!-- col -->
+              <div class="col-xs-4">
+                <a href=javascript:;><i class="fa fa-chain-broken fa-2x"></i> Lien 2</a>
+              </div>
+              <!-- /col -->
+              <!-- col -->
+              <div class="col-xs-4">
+                <a href=javascript:;><i class="fa fa-ellipsis-h fa-2x"></i> Lien 3</a>
+              </div>
+              <!-- /col -->
+          </div>
+          <!-- /row -->
+
+        </div>
+      </div>
+    </div>
+    <!-- /col -->
+
+    <!-- col -->
+    <div class="card-container col-lg-3 col-sm-6 col-sm-12">
+      <div class="card">
+        <div class="front bg-slategray">
+
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-xs-4">
+              <i class="fa fa-eye fa-4x"></i>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-xs-8">
+              <p class="text-elg text-strong mb-0">29 651</p>
+              <span>Vues</span>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+
+        </div>
+        <div class="back bg-slategray">
+
+          <!-- row -->
+          <div class="row">
+              <!-- col -->
+              <div class="col-xs-4">
+                <a href=javascript:;><i class="fa fa-cog fa-2x"></i> Lien 1</a>
+              </div>
+              <!-- /col -->
+              <!-- col -->
+              <div class="col-xs-4">
+                <a href=javascript:;><i class="fa fa-chain-broken fa-2x"></i> Lien 2</a>
+              </div>
+              <!-- /col -->
+              <!-- col -->
+              <div class="col-xs-4">
+                <a href=javascript:;><i class="fa fa-ellipsis-h fa-2x"></i> Lien 3</a>
+              </div>
+              <!-- /col -->
+          </div>
+          <!-- /row -->
+
+        </div>
+      </div>
+    </div>
+    <!-- /col -->
+
+  </div>
+  <!-- /row -->
+
+
+  <!-- row -->
+  <div class="row">
+
+
+    <!-- col -->
+    <div class="col-md-4">
+
+      <!-- tile -->
+      <section class="tile" fullscreen="isFullscreen03">
+
+        <!-- tile header -->
+        <div class="tile-header dvd dvd-btm">
+          <h1 class="custom-font"><strong>Moniteur </strong>d'activié</h1>
+          <ul class="controls">
+            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+              <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                <li>
+                  <a href tile-control-toggle>
+                    <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                    <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-refresh ng-click="ajaxFaker()">
+                    <fa name="refresh"></fa> Refresh
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
+                    <fa name="expand"></fa> Fullscreen
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+            <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+          </ul>
+        </div>
+        <!-- /tile header -->
+
+        <!-- tile widget -->
+        <div class="tile-widget mb-40">
+
+          <div class="progress-list mt-20">
+            <div class="details">
+              <div class="title text-lg" style="line-height: 30px"><strong>125</strong> utilisateurs en ligne</div>
+            </div>
+            <!-- <div class="status pull-right bg-greensea">
+              <span>41</span>%
+            </div> -->
+            <div class="clearfix"></div>
+            <uib-progressbar class="not-rounded" value="41" type="greensea"></uib-progressbar>
+          </div>
+
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-md-4">
+              <h4 class="text-light">Docker 1 <i class="fa fa-caret-up text-success"></i></h4>
+              <uib-progressbar class="progress-xs not-rounded mb-0" value="75" type="primary"></uib-progressbar>
+              <small>Health: <span class="text-success">Good</span></small>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-md-4">
+              <h4 class="text-light">Docker 2 <i class="fa fa-caret-up text-success"></i></h4>
+              <uib-progressbar class="progress-xs not-rounded mb-0" value="20" type="primary"></uib-progressbar>
+              <small>Health: <span class="text-success">Good</span></small>
+            </div>
+            <!-- /col -->
+            <!-- col -->
+            <div class="col-md-4">
+              <h4 class="text-light">Docker 3 <i class="fa fa-caret-down text-danger"></i></h4>
+              <uib-progressbar class="progress-xs not-rounded mb-0" value="90" type="primary"></uib-progressbar>
+              <small>Health: <span class="text-danger">Bad</span></small>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+
+        </div>
+        <!-- /tile widget -->
+
+        <!-- tile body -->
+        <div class="tile-body p-0" ng-controller="RealtimeLoadCtrl" style="height: 133px">
+
+          <rickshaw rickshaw-options="options1"
+                    rickshaw-features="features1"
+                    rickshaw-series="series1">
+          </rickshaw>
+
+        </div>
+        <!-- /tile body -->
+
+      </section>
+      <!-- /tile -->
+
+    </div>
+    <!-- /col -->
+
+
+
+    <div class="col-md-4">
+      <!-- tile -->
+      <section class="tile widget-message" fullscreen="isFullscreen08" ng-controller="MessageWidgetCtrl">
+
+        <!-- tile header -->
+        <div class="tile-header bg-blue dvd dvd-btm">
+          <h1 class="custom-font"><strong>Messagerie </strong>rapide</h1>
+          <ul class="controls">
+            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+              <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                <li>
+                  <a href tile-control-toggle>
+                    <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                    <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-refresh ng-click="ajaxFaker()">
+                    <fa name="refresh"></fa> Refresh
+                  </a>
+                </li>
+                <li>
+                  <a href tile-control-fullscreen ng-click="isFullscreen08 = !isFullscreen08">
+                    <fa name="expand"></fa> Fullscreen
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+            <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+          </ul>
+        </div>
+        <!-- /tile header -->
+
+        <!-- tile widget -->
+        <div class="tile-widget bg-blue">
+
+          <form role="form" class="ng-pristine ng-valid">
+            <div class="form-group">
+              <ui-select multiple ng-model="recipients.emails" ng-disabled="disabled" class="underline-input">
+                <ui-select-match placeholder="Select recipients...">{{$item}}</ui-select-match>
+                <ui-select-choices repeat="recipient in availableRecipients | filter:$select.search">
+                  {{recipient}}
+                </ui-select-choices>
+              </ui-select>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control underline-input" placeholder="Type subject...">
+            </div>
+          </form>
+
+        </div>
+        <!-- /tile widget -->
+
+        <!-- tile body -->
+        <div class="tile-body p-0">
+
+          <text-angular ng-model="messageContent" ta-toolbar="[['h1','h2','h3'],['bold','italics','underline'],['justifyLeft','justifyCenter','justifyRight'],['ul','ol']]" class="mail-content">
+          </text-angular>
+
+        </div>
+        <!-- /tile body -->
+
+        <!-- tile footer -->
+        <div class="tile-footer bg-blue text-right">
+
+          <button class="btn btn-blue btn-ef btn-ef-7 btn-ef-7h" activate-button="success"><i class="fa fa-envelope"></i> Send message</button>
+
+        </div>
+        <!-- /tile footer -->
+
+      </section>
+      <!-- /tile -->
+    </div>
+
+    <div class="col-md-4">
+        <section class="tile bg-greensea widget-appointments" fullscreen="isFullscreen10" ng-controller="AppointmentsWidgetCtrl">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font">Date</h1>
+            <ul class="controls">
+              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen10 = !isFullscreen10">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <!-- row -->
+            <div class="row">
+              <!-- col -->
+              <div class="col-md-6 text-center">
+
+                <h4 class="text-light">Lyon</h4>
+                <clock radius="60"></clock>
+                <span class="text-light">25&deg;C</span>
+
+              </div>
+              <!-- /col -->
+              <!-- col -->
+              <div class="col-md-6 b-l text-center">
+                <span class="day">{{date | date:'dd'}}</span><br/>
+                <span class="month">{{date | date:'MMMM'}}</span>
+              </div>
+              <!-- /col -->
+            </div>
+            <!-- /row -->
+          </div>
+          <!-- /tile body -->
+
+        </section>
+    </div>
+
+  </div>
+  <!-- /row -->
+
+
+
+
+
+</div>

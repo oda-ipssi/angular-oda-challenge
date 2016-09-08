@@ -20,7 +20,7 @@ angular.module('odaChallengeApp')
           $http.put('http://127.0.0.1:8000/subscription/'+orderId+'/stop?token='+$rootScope.user.token).then(
               function(response) {
                 console.log(response);
-                alert('Votre désabonnement a été pris en compte.')
+                window.alert('Votre désabonnement a été pris en compte.');
               },
               function(response){
                 console.log(response);

@@ -290,13 +290,13 @@ angular.module('odaChallengeApp')
 
     $scope.createDb = function() {
       $http.post('http://127.0.0.1:8000/create/table', {'data': $scope.database}).then(
-        function(successCreateDb) {
+        function() {
           window.alert('Table created !');
           $state.go('databases');
         },
 
         function(errorCreateDb) {
-          console.log('error:',error);
+          console.log('error:',errorCreateDb.message);
         }
       );
 

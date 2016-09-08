@@ -13,8 +13,7 @@ angular.module('odaChallengeApp')
     $scope.page = {
         title: 'Dashboard',
         subtitle: 'ODA4'
-
-    }
+    };
 
     if (!$rootScope.user.isAdmin) {
         $state.go('home');

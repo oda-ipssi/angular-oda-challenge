@@ -23,12 +23,12 @@ angular.module('odaChallengeApp')
                 var aboTitle = response.data.data.title;
                 var aboTarif = response.data.data.price;
                 if(offerStatus !== 3) {
-                  $scope.aboEnCours = "Abonnement en cours : " + aboTitle + " à " + aboTarif + "€/mois.";
+                  $scope.aboEnCours = 'Abonnement en cours : ' + aboTitle + ' à ' + aboTarif + '€/mois.';
                   $scope.aboStop = '';
                 }
                 else {
                   $scope.aboEnCours = 'Vous n\'avez pas d\'abonnement en cours.';
-                  $scope.aboStop = "Vous avez un abonnement : " + aboTitle + " à " + aboTarif + "€/mois actuellement stoppé.";
+                  $scope.aboStop = 'Vous avez un abonnement : ' + aboTitle + ' à ' + aboTarif + '€/mois actuellement stoppé.';
                 }
               },
               function(response){

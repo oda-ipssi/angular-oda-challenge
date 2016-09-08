@@ -63,7 +63,7 @@ angular.module('odaChallengeApp')
         }
       );
 
-      
-    }
+
+    };
 
   }]);

@@ -9,7 +9,7 @@
 */
 angular.module('odaChallengeApp')
 
-.controller('OrderDownloadCtrl', function($scope,$http,$state){
+.controller('OrderDownloadCtrl', function($scope,$http,$state,$rootScope){
 
     $scope.page = {
         title: 'Commandes',

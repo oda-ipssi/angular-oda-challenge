@@ -8,7 +8,7 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('DatabaseCtrl', function ($scope, $http, $state) {
+  .controller('DatabaseCtrl', function ($scope, $http, $state, $timeout) {
     var jsonPostDatas = false;
     $scope.dbDatas    = false;
     $scope.gridsDatas = [];
@@ -17,13 +17,44 @@ angular.module('odaChallengeApp')
     var getDbDatas = function(_jsonDatas) {
       $http.post('http://127.0.0.1:8000/get-data/user-table', {'data':_jsonDatas}).then(
         function(successGetDbDatas) {
-          console.log(successGetDbDatas);
           $scope.dbDtas = successGetDbDatas.data.data;
+
+          $timeout(function(){
+            $scope.gridsDatas = createStrucutredJson(successGetDbDatas.data.data);
+            console.log($scope.gridsDatas);
+          },false);
+
         },
         function(errorGetDbDatas) {
-
+          console.log(errorGetDbDatas);
         }
       );
+    };
+
+    var createStrucutredJson = function(_nonStructuredDatas) {
+
+      var structuredJson = {
+          enableCellEditOnFocus: true,
+          paginationPageSizes: [25, 50, 75],
+          paginationPageSize: 25,
+          data: _nonStructuredDatas,
+          columnDefs: []
+        };
+
+      for(var field in _nonStructuredDatas[0]) {
+        var columnDef = {
+          name: field,
+          enableCellEdit: false
+        };
+
+        if(field !== 'id') {
+          columnDef.enableCellEdit = true;
+        }
+
+        structuredJson.columnDefs.push(columnDef);
+      }
+
+      return structuredJson;
     };
 
     $scope.$on('$viewContentLoaded', function(event) {
@@ -33,7 +64,7 @@ angular.module('odaChallengeApp')
 
       jsonPostDatas = {
         'tableName': $state.params.dbname
-      }
+      };
 
       getDbDatas(jsonPostDatas);
     });

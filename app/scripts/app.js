@@ -24,7 +24,7 @@ angular
     'angular-momentjs',
     'ngMessages',
     'textAngular',
-    "ui.select"
+    'ui.select'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {

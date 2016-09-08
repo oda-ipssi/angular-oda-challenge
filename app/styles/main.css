@@ -1535,3 +1535,9 @@ Color on mobile
     color: #fff;
   }
 }
+
+
+.grid {
+  width: 500px;
+  height: 200px;
+}

@@ -16,6 +16,9 @@ angular.module('odaChallengeApp')
 
     }
 
+    if (!$rootScope.user.isAdmin) {
+        $state.go('home');
+    }
 
     $scope.getUsers = function(){
         $http.get('http://localhost:8000/admin/dashboard/active-users?token=' + $rootScope.user.token).then(
@@ -27,7 +30,6 @@ angular.module('odaChallengeApp')
           },
           function(response) {
             console.log(response);
-            $state.go('home');
           });
     };
     $scope.getCommandes = function(){

@@ -73,6 +73,7 @@
     </div>
   </header>
   <!-- End header -->
+  <div ng-if="user.isAdmin" ng-include="'views/admin_navbar.html'"></div>
 
   <div ui-view></div>
 

@@ -18,28 +18,29 @@ angular.module('odaChallengeApp')
 
 
     $scope.getUsers = function(){
-        $http.get('http://localhost:8000/admin/dashboard/active-users?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzIzMDkxLCJleHAiOjE0NzMzMjY2OTEsIm5iZiI6MTQ3MzMyMzA5MSwianRpIjoiZGQyZDM4NmQ5NDY4OWQ1ZTdlMTA4NThkYTM1N2QwODQifQ.uyc9voxB7crVJeobLiA6BGlQpghIy5YnnMNNivNURYp3A18TyAm8IHf8cae-OWA3TI6Xo4UMcmI8VJ3dX7-hdg').then(
+        $http.get('http://localhost:8000/admin/dashboard/active-users?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzI2ODYyLCJleHAiOjE0NzMzMzA0NjIsIm5iZiI6MTQ3MzMyNjg2MiwianRpIjoiZDZlMTJiMjljYjU3ODgxMTVlYTBkODhjNGExYmJjNzcifQ.oZ5YWpQku80APR4QRfTgTajev1dk8WZfBsOsnAUNJm8wWnCSxkuJS9YL77S_uz6-be26nIilicee-6sZAV_Mfw').then(
           function(response) {
-             $scope.users_number = response.data.data.number;
-             $scope.total_admin = response.data.data.total_admin;
-             $scope.total_customer = response.data.data.total_customer;
-             $scope.total_registered = response.data.data.total_registered;
+             $scope.users_number = Number(response.data.data.number);
+             $scope.total_admin = Number(response.data.data.total_admin);
+             $scope.total_customer = Number(response.data.data.total_customer);
+             $scope.total_registered = Number(response.data.data.total_registered);
           },
           function(response) {
             console.log(response);
           });
     };
     $scope.getCommandes = function(){
-        $http.get('http://localhost:8000/admin/dashboard/valid-orders?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzIzMDkxLCJleHAiOjE0NzMzMjY2OTEsIm5iZiI6MTQ3MzMyMzA5MSwianRpIjoiZGQyZDM4NmQ5NDY4OWQ1ZTdlMTA4NThkYTM1N2QwODQifQ.uyc9voxB7crVJeobLiA6BGlQpghIy5YnnMNNivNURYp3A18TyAm8IHf8cae-OWA3TI6Xo4UMcmI8VJ3dX7-hdg').then(
+        $http.get('http://localhost:8000/admin/dashboard/valid-orders?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzI2ODYyLCJleHAiOjE0NzMzMzA0NjIsIm5iZiI6MTQ3MzMyNjg2MiwianRpIjoiZDZlMTJiMjljYjU3ODgxMTVlYTBkODhjNGExYmJjNzcifQ.oZ5YWpQku80APR4QRfTgTajev1dk8WZfBsOsnAUNJm8wWnCSxkuJS9YL77S_uz6-be26nIilicee-6sZAV_Mfw').then(
           function(response) {
+              console.log(response.data.data);
              $scope.commandes_number = response.data.data.number;
-             $scope.total_sub1 = response.data.data.total_sub1;
-             $scope.total_sub2 = response.data.data.total_sub2;
-             $scope.total_sub3 = response.data.data.total_sub3;
-             $scope.commandes_sum = response.data.data.sum;
-             $scope.sum_sub1 = response.data.data.sum_sub1;
-             $scope.sum_sub2 = response.data.data.sum_sub2;
-             $scope.sum_sub3 = response.data.data.sum_sub3;
+             $scope.total_sub1 = Number(response.data.data.total_sub1);
+             $scope.total_sub2 = Number(response.data.data.total_sub2);
+             $scope.total_sub3 = Number(response.data.data.total_sub3);
+             $scope.commandes_sum = Number(response.data.data.sum);
+             $scope.sum_sub1 = Number(response.data.data.sum_sub1);
+             $scope.sum_sub2 = Number(response.data.data.sum_sub2);
+             $scope.sum_sub3 = Number(response.data.data.sum_sub3);
           },
           function(response) {
             console.log(response);
@@ -93,6 +94,20 @@ angular.module('odaChallengeApp')
 })
 
 .controller('MessageWidgetCtrl', function($scope){
+
+    // $scope.getEmails = function(){
+    //     $http.get('http://localhost:8000/admin/dashboard/emails?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzI2ODYyLCJleHAiOjE0NzMzMzA0NjIsIm5iZiI6MTQ3MzMyNjg2MiwianRpIjoiZDZlMTJiMjljYjU3ODgxMTVlYTBkODhjNGExYmJjNzcifQ.oZ5YWpQku80APR4QRfTgTajev1dk8WZfBsOsnAUNJm8wWnCSxkuJS9YL77S_uz6-be26nIilicee-6sZAV_Mfw').then(
+    //       function(response) {
+    //           console.log(response.data.data);
+    //          $scope.emails = response.data.data;
+    //       },
+    //       function(response) {
+    //         console.log(response);
+    //       });
+    // };
+    //
+    // $scope.getEmails();
+
   $scope.availableRecipients = ['RLake@nec.gov','RBastian@lacus.io','VMonroe@orci.ly','YMckenzie@mattis.gov','VMcmyne@molestie.org','BKliban@aliquam.gov','HHellems@tincidunt.org','KAngell@sollicitudin.ly'];
   $scope.recipients = {};
   $scope.recipients.emails = ['RLake@nec.gov','VMonroe@orci.ly'];

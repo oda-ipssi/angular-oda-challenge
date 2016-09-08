@@ -51,8 +51,8 @@
             <!-- col -->
             <div class="col-xs-4">
               <br>
-              <p>Admins </p>
-              <p><strong>{{ total_admin }}</strong></p>
+              <p>Enregistrés </p>
+              <p><strong>{{ total_registered }}</strong></p>
             </div>
             <!-- /col -->
             <!-- col -->
@@ -65,8 +65,8 @@
             <!-- col -->
             <div class="col-xs-4">
               <br>
-              <p>Enregistrés </p>
-              <p><strong>{{ total_registered }}</strong></p>
+              <p>Admins </p>
+              <p><strong>{{ total_admin }}</strong></p>
             </div>
             <!-- /col -->
           </div>
@@ -102,28 +102,24 @@
         <div class="back bg-lightred">
 
           <!-- row -->
-          <div class="row text-center">
-              <!-- col -->
+          <div class="row text-center" ui-sref="admin-orders">
+
               <div class="col-xs-4">
                 <br>
-                <p>Professionel </p>
-                <p><strong>{{ total_sub1 }}</strong></p>
-              </div>
-              <!-- /col -->
+                <p>Normal </p>
+                <p><strong>{{ total_sub3 }}</strong></p>
+              </div
               <!-- col -->
               <div class="col-xs-4">
                 <br>
                 <p>Premium </p>
                 <p><strong>{{ total_sub2 }}</strong></p>
               </div>
-              <!-- /col -->
-              <!-- col -->
               <div class="col-xs-4">
                 <br>
-                <p>Normal </p>
-                <p><strong>{{ total_sub3 }}</strong></p>
+                <p>Professionel </p>
+                <p><strong>{{ total_sub1 }}</strong></p>
               </div>
-              <!-- /col -->
           </div>
           <!-- /row -->
 
@@ -158,27 +154,21 @@
 
           <!-- row -->
           <div class="row text-center">
-              <!-- col -->
-              <div class="col-xs-4">
-                <br>
-                <p>Professionel </p>
-                <p><strong>{{ sum_sub1 }}</strong></p>
-              </div>
-              <!-- /col -->
-              <!-- col -->
-              <div class="col-xs-4">
-                <br>
-                <p>Premium </p>
-                <p><strong>{{ sum_sub2 }}</strong></p>
-              </div>
-              <!-- /col -->
-              <!-- col -->
               <div class="col-xs-4">
                 <br>
                 <p>Normal </p>
                 <p><strong>{{ sum_sub3 }}</strong></p>
               </div>
-              <!-- /col -->
+              <div class="col-xs-4">
+                <br>
+                <p>Premium </p>
+                <p><strong>{{ sum_sub2 }}</strong></p>
+              </div>
+              <div class="col-xs-4">
+                <br>
+                <p>Professionel </p>
+                <p><strong>{{ sum_sub1 }}</strong></p>
+              </div>
           </div>
           <!-- /row -->
 
@@ -383,19 +373,19 @@
         <!-- tile widget -->
         <div class="tile-widget bg-blue">
 
-          <form role="form" class="ng-pristine ng-valid">
+          <!-- <form role="form" class="ng-pristine ng-valid">
             <div class="form-group">
               <ui-select multiple ng-model="recipients.emails" ng-disabled="disabled" class="underline-input">
-                <ui-select-match placeholder="Select recipients...">{{$item}}</ui-select-match>
+                <ui-select-match placeholder="Adresses Emails...">{{$item}}</ui-select-match>
                 <ui-select-choices repeat="recipient in availableRecipients | filter:$select.search">
                   {{recipient}}
                 </ui-select-choices>
               </ui-select>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control underline-input" placeholder="Type subject...">
+              <input type="text" class="form-control underline-input" placeholder="Objet">
             </div>
-          </form>
+          </form> -->
 
         </div>
         <!-- /tile widget -->

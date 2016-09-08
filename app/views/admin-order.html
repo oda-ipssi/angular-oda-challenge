@@ -11,7 +11,7 @@
           <a ui-sref="home"><i class="fa fa-home"></i> {{main.title}}</a>
         </li>
         <li>
-          <a ui-sref="admin-orders">{{page.title}}</a>
+          <a ui-sref="admin-order">{{page.title}}</a>
         </li>
       </ul>
 
@@ -30,17 +30,18 @@
                   <th>Prix</th>
                   <th>Date création</th>
                   <th>Date modification</th>
+                  <th>PDF</th>
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="(key, value) in orders">
-                  <th>{{ value.id }}</th>
-                  <td>{{ value.user_id }}</td>
-                  <td>{{ value.offer_id }}</td>
-                  <td>{{ value.vat }} €</td>
-                  <td ng-bind="formatDate(value.created_at) | date:'dd/MM/yyyy'"></td>
-                  <td ng-bind="formatDate(value.updated_at) | date:'dd/MM/yyyy'"></td>
-                  <td><a href="#/admin/orders/{{ value.id }}" class="btn btn-primary">Voir +</a></td>
+                <tr>
+                  <th>{{ order.id }}</th>
+                  <td>{{ order.user_id }}</td>
+                  <td>{{ order.offer_id }}</td>
+                  <td>{{ order.vat }} €</td>
+                  <td ng-bind="formatDate(order.created_at) | date:'dd/MM/yyyy'"></td>
+                  <td ng-bind="formatDate(order.updated_at) | date:'dd/MM/yyyy'"></td>
+                  <td><a href="#/admin/orders/{{ order.id }}/download" class="btn btn-primary">Télécharger</a></td>
                 </tr>
               </tbody>
             </table>

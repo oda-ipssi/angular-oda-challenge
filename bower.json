@@ -30,7 +30,8 @@
     "rickshaw": "~1.5.1",
     "angular-messages": "1.4.6",
     "flexslider": "~2.6.2",
-    "textAngular": "latest"
+    "textAngular": "latest",
+    "angular-ui-select": "~0.12.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

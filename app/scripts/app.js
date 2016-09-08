@@ -23,7 +23,8 @@ angular
     'ui.tinymce',
     'angular-momentjs',
     'ngMessages',
-    'textAngular'
+    'textAngular',
+    "ui.select"
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -134,6 +135,16 @@ angular
           url: '/admin/orders',
           templateUrl: 'views/admin-orders.html',
           controller: 'OrdersCtrl'
+        })
+        .state('admin-order', {
+          url: '/admin/orders/:id',
+          templateUrl: 'views/admin-order.html',
+          controller: 'OrderCtrl'
+        })
+        .state('admin-order-download', {
+          url: '/admin/orders/:id/download',
+          templateUrl: 'views/admin-order-download.html',
+          controller: 'OrderDownloadCtrl'
         })
 
         .state('users', {

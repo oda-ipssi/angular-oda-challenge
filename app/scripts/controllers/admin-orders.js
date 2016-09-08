@@ -15,14 +15,20 @@ angular.module('odaChallengeApp')
         subtitle: 'Liste'
     };
 
-    $http.get('http://localhost:8000/admin/orders?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzIzMDkxLCJleHAiOjE0NzMzMjY2OTEsIm5iZiI6MTQ3MzMyMzA5MSwianRpIjoiZGQyZDM4NmQ5NDY4OWQ1ZTdlMTA4NThkYTM1N2QwODQifQ.uyc9voxB7crVJeobLiA6BGlQpghIy5YnnMNNivNURYp3A18TyAm8IHf8cae-OWA3TI6Xo4UMcmI8VJ3dX7-hdg').then(
+    $http.get('http://localhost:8000/admin/orders?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzI2ODYyLCJleHAiOjE0NzMzMzA0NjIsIm5iZiI6MTQ3MzMyNjg2MiwianRpIjoiZDZlMTJiMjljYjU3ODgxMTVlYTBkODhjNGExYmJjNzcifQ.oZ5YWpQku80APR4QRfTgTajev1dk8WZfBsOsnAUNJm8wWnCSxkuJS9YL77S_uz6-be26nIilicee-6sZAV_Mfw').then(
       function(response) {
           console.log(response.data);
-         $scope.orders = response.data.data;
+          $scope.orders = response.data.data.orders;
       },
       function(response) {
         console.log(response);
       });
+
+
+      $scope.formatDate = function(date){
+              var dateOut = new Date(date);
+              return dateOut;
+        };
 
 })
 ;

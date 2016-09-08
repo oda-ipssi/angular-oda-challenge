@@ -9,13 +9,16 @@
 */
 angular.module('odaChallengeApp')
 
-.controller('DashboardCtrl', function($scope,$http){
+.controller('DashboardCtrl', ['$scope', '$http', '$rootScope', '$state', function ($scope, $http, $rootScope, $state){
     $scope.page = {
         title: 'Dashboard',
         subtitle: 'ODA4'
-    };
 
+    }
 
+    if (!$rootScope.user.isAdmin) {
+        $state.go('home');
+    }
 
     $scope.getUsers = function(){
         $http.get('http://localhost:8000/admin/dashboard/active-users?token=' + $rootScope.user.token).then(
@@ -49,7 +52,7 @@ angular.module('odaChallengeApp')
 
     $scope.getUsers();
     $scope.getCommandes();
-})
+}])
 
 .controller('RealtimeLoadCtrl', function($scope, $interval){
     $scope.options1 = {

@@ -12,7 +12,7 @@ angular.module('odaChallengeApp')
 
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
-      $http.get('http://localhost:8000/offers?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjYsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMjM4NjY0LCJleHAiOjE0NzMyNDIyNjQsIm5iZiI6MTQ3MzIzODY2NCwianRpIjoiYzk5NmU0NTNmYzUyNzU2NmMxOGQ5YjRhYTM0NjJjNjUifQ.ciYS8br-lvwkPOgTNtxHs3Zx93P-fuKJ8hVCvfNY3MiXIrFf4em-7oCmr-EVRoNmdzFti9yu8ytQUWJhDlWXcw').then(
+      $http.get('http://localhost:8000/offers?token=' + $rootScope.user.token).then(
         function(response) {
           console.log(response);
            $scope.tarifList = response.data.data;
@@ -34,11 +34,36 @@ angular.module('odaChallengeApp')
       data.data.offerId = id;
       //data.data.Order = null;
 
-      $http.post('http://localhost:8000/subscription?token=' + $rootScope.user.token, data).then(function(successResponse) {
+      $http.get('http://localhost:8000/subscription?token='+$rootScope.user.token).then(
+        function(response) {
+          console.log(response);
+          if(!response.data){
+            $http.post('http://localhost:8000/subscription?token=' + $rootScope.user.token, data).then(function(successResponse) {
+                console.log(successResponse);
+            }, function(errorResponse) {
+                console.log(errorResponse);
+            });
+          }
+          else {
+
+            var orderId = response.data.data.order[0].id;
+            console.log(orderId);
+            console.log(data);
+            $http.put('http://localhost:8000/subscription/' + orderId + '?token=' + $rootScope.user.token, data).then(function(successResponse) {
               console.log(successResponse);
           }, function(errorResponse) {
               console.log(errorResponse);
           });
+          }
+
+
+        },
+        function(response){
+          console.log(response);
+        }
+      );
+
+      
     }
 
   }]);

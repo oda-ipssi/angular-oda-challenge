@@ -18,7 +18,7 @@ angular.module('odaChallengeApp')
 
 
     $scope.getUsers = function(){
-        $http.get('http://localhost:8000/admin/dashboard/active-users?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzE4NzU1LCJleHAiOjE0NzMzMjIzNTUsIm5iZiI6MTQ3MzMxODc1NSwianRpIjoiYWJkYWY3ZmUzOTY0MjA5OWJjZDY1YjhkOGJjNGUxM2IifQ.N83GxbyHedzZGOIMfYrhPwYlw82LBAqNoSq-u9zsq3efY8vC1VeMH0-ukgdPjJOrF671--MiyWTIIb04x0HPUw').then(
+        $http.get('http://localhost:8000/admin/dashboard/active-users?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzIzMDkxLCJleHAiOjE0NzMzMjY2OTEsIm5iZiI6MTQ3MzMyMzA5MSwianRpIjoiZGQyZDM4NmQ5NDY4OWQ1ZTdlMTA4NThkYTM1N2QwODQifQ.uyc9voxB7crVJeobLiA6BGlQpghIy5YnnMNNivNURYp3A18TyAm8IHf8cae-OWA3TI6Xo4UMcmI8VJ3dX7-hdg').then(
           function(response) {
              $scope.users_number = response.data.data.number;
              $scope.total_admin = response.data.data.total_admin;
@@ -30,7 +30,7 @@ angular.module('odaChallengeApp')
           });
     };
     $scope.getCommandes = function(){
-        $http.get('http://localhost:8000/admin/dashboard/valid-orders?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzE4NzU1LCJleHAiOjE0NzMzMjIzNTUsIm5iZiI6MTQ3MzMxODc1NSwianRpIjoiYWJkYWY3ZmUzOTY0MjA5OWJjZDY1YjhkOGJjNGUxM2IifQ.N83GxbyHedzZGOIMfYrhPwYlw82LBAqNoSq-u9zsq3efY8vC1VeMH0-ukgdPjJOrF671--MiyWTIIb04x0HPUw').then(
+        $http.get('http://localhost:8000/admin/dashboard/valid-orders?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9zaWduLWluIiwiaWF0IjoxNDczMzIzMDkxLCJleHAiOjE0NzMzMjY2OTEsIm5iZiI6MTQ3MzMyMzA5MSwianRpIjoiZGQyZDM4NmQ5NDY4OWQ1ZTdlMTA4NThkYTM1N2QwODQifQ.uyc9voxB7crVJeobLiA6BGlQpghIy5YnnMNNivNURYp3A18TyAm8IHf8cae-OWA3TI6Xo4UMcmI8VJ3dX7-hdg').then(
           function(response) {
              $scope.commandes_number = response.data.data.number;
              $scope.total_sub1 = response.data.data.total_sub1;

@@ -130,6 +130,11 @@ angular
           templateUrl: 'views/admin-dashboard.html',
           controller: 'DashboardCtrl'
         })
+        .state('admin-orders', {
+          url: '/admin/orders',
+          templateUrl: 'views/admin-orders.html',
+          controller: 'OrdersCtrl'
+        })
 
         .state('users', {
           url: '/users',

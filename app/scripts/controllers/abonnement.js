@@ -8,15 +8,33 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('AbonnementCtrl', ['$scope', '$http', function ($scope, $http) {
+  .controller('AbonnementCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
 
   	$scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
 
-      $http.get('http://localhost:8000/abonnement').then(
+      $http.get('http://localhost:8000/subscription?token='+$rootScope.user.token).then(
         function(response) {
-          console.log(response);
-          $scope.abonnement = response.data.data.abonnement;
+          var offerId = response.data.data.order[0].offer_id;
+          var offerStatus = response.data.data.order[0].status;
+          $http.get('http://localhost:8000/offers/'+offerId).then(
+              function(response) {
+                console.log(response);
+                var aboTitle = response.data.data.title;
+                var aboTarif = response.data.data.price;
+                if(offerStatus !== 3) {
+                  $scope.aboEnCours = "Abonnement en cours : " + aboTitle + " à " + aboTarif + "€/mois.";
+                  $scope.aboStop = '';
+                }
+                else {
+                  $scope.aboEnCours = 'Vous n\'avez pas d\'abonnement en cours.';
+                  $scope.aboStop = "Vous avez un abonnement : " + aboTitle + " à " + aboTarif + "€/mois actuellement stoppé.";
+                }
+              },
+              function(response){
+                console.log(response);
+              }
+          );
         },
         function(response){
           console.log(response);

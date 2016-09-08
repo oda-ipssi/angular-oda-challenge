@@ -8,7 +8,7 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('InscriptionCtrl', ['$scope', '$http', function ($scope, $http) {
+  .controller('InscriptionCtrl', ['$scope', '$http', '$rootScope', '$cookies', '$location', function ($scope, $http, $rootScope, $cookies, $location) {
     $scope.inscriptionSubmit = function() {
       var tem = true;
       $scope.usernameMessage    = false;
@@ -104,6 +104,8 @@ angular.module('odaChallengeApp')
           console.log(successResponse);
           $rootScope.idSession = successResponse.data.idSession;
           $rootScope.token = successResponse.data.token;
+          $cookies.putObject('odaLogin', { token: successResponse.data.token, idSession: successResponse.data.idSession });
+          $location.path('/');
         }, function(errorResponse) {
           console.log(errorResponse);
         });

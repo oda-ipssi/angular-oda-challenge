@@ -16,7 +16,7 @@ angular.module('odaChallengeApp')
      * @return {object} Array of databases
      */
     var getDatabases = function() {
-      $http.post('http://api-yoda4.it-akademy.com/get/user-table').then(
+      $http.post('http://api-yoda4.it-akademy.com/get/user-table?token=' + $rootScope.user.token).then(
         function(successGetDatabases) {
           console.log(successGetDatabases.data.data);
           $scope.databases = successGetDatabases.data.data;

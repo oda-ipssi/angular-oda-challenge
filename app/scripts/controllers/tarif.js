@@ -24,4 +24,9 @@ angular.module('odaChallengeApp')
         });
     });
 
+    $scope.subscribe = function(id){
+      console.log(id);
+      $http.post('http://localhost:8000/subscription?token='+ $rootScope.token)
+    }
+
   }]);

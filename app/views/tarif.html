@@ -18,20 +18,11 @@
 					<ul ng-bind-html="tarif.description | stringToHtml">
 					</ul>
 					<div class="pricing-bottom">
-						<a ng-show="root.token" href="#" class="btn btn-default btn-bordered btn-lg">Sélectionner</a>
-						<a ng-hide="root.token" href="#" class="btn btn-default btn-bordered btn-lg">S'inscrire</a>
+						<a ng-show="token" ng-click='subscribe(tarif.id)' href="#" class="btn btn-default btn-bordered btn-lg">Sélectionner</a>
+						<a ng-hide="token" href="#" class="btn btn-default btn-bordered btn-lg">S'inscrire</a>
 					</div>
 				</div>
 			</div>
-
-
-
-
-
-
-
-
-
 
 
 

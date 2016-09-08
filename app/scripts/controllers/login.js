@@ -34,7 +34,7 @@ angular.module('odaChallengeApp')
           data: user
         };
 
-        $http.post('http://localhost:8000/sign-in', data).then(
+        $http.post('http://127.0.0.1:8000/sign-in', data).then(
           function(successResponse) {
             console.log(successResponse);
             $rootScope.user = {

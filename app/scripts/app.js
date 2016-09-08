@@ -22,7 +22,8 @@ angular
     'ui.grid.pagination',
     'ui.tinymce',
     'angular-momentjs',
-    'ngMessages'
+    'ngMessages',
+    'textAngular'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {

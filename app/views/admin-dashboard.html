@@ -36,7 +36,7 @@
             <!-- /col -->
             <!-- col -->
             <div class="col-xs-8">
-              <p class="text-elg text-strong mb-0">3 659</p>
+              <p class="text-elg text-strong mb-0">{{ users_number }}</p>
               <span>Utilisateurs</span>
             </div>
             <!-- /col -->
@@ -47,20 +47,26 @@
         <div class="back bg-greensea">
 
           <!-- row -->
-          <div class="row">
+          <div class="row text-center">
             <!-- col -->
             <div class="col-xs-4">
-              <a href=javascript:;><i class="fa fa-cog fa-2x"></i> Lien 1</a>
+              <br>
+              <p>Admins </p>
+              <p><strong>{{ total_admin }}</strong></p>
             </div>
             <!-- /col -->
             <!-- col -->
             <div class="col-xs-4">
-              <a href=javascript:;><i class="fa fa-chain-broken fa-2x"></i> Lien 2</a>
+              <br>
+              <p>Abonnés </p>
+              <p><strong>{{ total_customer }}</strong></p>
             </div>
             <!-- /col -->
             <!-- col -->
             <div class="col-xs-4">
-              <a href=javascript:;><i class="fa fa-ellipsis-h fa-2x"></i> Lien 3</a>
+              <br>
+              <p>Enregistrés </p>
+              <p><strong>{{ total_registered }}</strong></p>
             </div>
             <!-- /col -->
           </div>
@@ -85,7 +91,7 @@
             <!-- /col -->
             <!-- col -->
             <div class="col-xs-8">
-              <p class="text-elg text-strong mb-0">19 364</p>
+              <p class="text-elg text-strong mb-0">{{ commandes_number }}</p>
               <span>Commandes</span>
             </div>
             <!-- /col -->
@@ -96,20 +102,26 @@
         <div class="back bg-lightred">
 
           <!-- row -->
-          <div class="row">
+          <div class="row text-center">
               <!-- col -->
               <div class="col-xs-4">
-                <a href=javascript:;><i class="fa fa-cog fa-2x"></i> Lien 1</a>
+                <br>
+                <p>Professionel </p>
+                <p><strong>{{ total_sub1 }}</strong></p>
               </div>
               <!-- /col -->
               <!-- col -->
               <div class="col-xs-4">
-                <a href=javascript:;><i class="fa fa-chain-broken fa-2x"></i> Lien 2</a>
+                <br>
+                <p>Premium </p>
+                <p><strong>{{ total_sub2 }}</strong></p>
               </div>
               <!-- /col -->
               <!-- col -->
               <div class="col-xs-4">
-                <a href=javascript:;><i class="fa fa-ellipsis-h fa-2x"></i> Lien 3</a>
+                <br>
+                <p>Normal </p>
+                <p><strong>{{ total_sub3 }}</strong></p>
               </div>
               <!-- /col -->
           </div>
@@ -134,8 +146,8 @@
             <!-- /col -->
             <!-- col -->
             <div class="col-xs-8">
-              <p class="text-elg text-strong mb-0">165 984</p>
-              <span>Abonnements</span>
+              <p class="text-elg text-strong mb-0">{{ commandes_sum }}</p>
+              <span>Recette</span>
             </div>
             <!-- /col -->
           </div>
@@ -145,20 +157,26 @@
         <div class="back bg-blue">
 
           <!-- row -->
-          <div class="row">
+          <div class="row text-center">
               <!-- col -->
               <div class="col-xs-4">
-                <a href=javascript:;><i class="fa fa-cog fa-2x"></i> Lien 1</a>
+                <br>
+                <p>Professionel </p>
+                <p><strong>{{ sum_sub1 }}</strong></p>
               </div>
               <!-- /col -->
               <!-- col -->
               <div class="col-xs-4">
-                <a href=javascript:;><i class="fa fa-chain-broken fa-2x"></i> Lien 2</a>
+                <br>
+                <p>Premium </p>
+                <p><strong>{{ sum_sub2 }}</strong></p>
               </div>
               <!-- /col -->
               <!-- col -->
               <div class="col-xs-4">
-                <a href=javascript:;><i class="fa fa-ellipsis-h fa-2x"></i> Lien 3</a>
+                <br>
+                <p>Normal </p>
+                <p><strong>{{ sum_sub3 }}</strong></p>
               </div>
               <!-- /col -->
           </div>
@@ -183,8 +201,8 @@
             <!-- /col -->
             <!-- col -->
             <div class="col-xs-8">
-              <p class="text-elg text-strong mb-0">29 651</p>
-              <span>Vues</span>
+              <p class="text-elg text-strong mb-0">{{ number_abonnement }}</p>
+              <span>Abonnements</span>
             </div>
             <!-- /col -->
           </div>
@@ -332,7 +350,7 @@
 
         <!-- tile header -->
         <div class="tile-header bg-blue dvd dvd-btm">
-          <h1 class="custom-font"><strong>Messagerie </strong>rapide</h1>
+          <h1 class="custom-font"><strong>Message </strong>rapide</h1>
           <ul class="controls">
             <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
 
@@ -394,7 +412,7 @@
         <!-- tile footer -->
         <div class="tile-footer bg-blue text-right">
 
-          <button class="btn btn-blue btn-ef btn-ef-7 btn-ef-7h" activate-button="success"><i class="fa fa-envelope"></i> Send message</button>
+          <button class="btn btn-blue btn-ef btn-ef-7 btn-ef-7h" activate-button="success"><i class="fa fa-envelope"></i> Envoyer</button>
 
         </div>
         <!-- /tile footer -->

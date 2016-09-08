@@ -8,15 +8,24 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('DesabonnementCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+  .controller('DesabonnementCtrl', ['$scope', '$http', '$location', '$rootScope', function ($scope, $http, $location, $rootScope) {
 
   	$scope.desabo = function(){
 
-  		$http.post('http://localhost:8000/desabonnement/6').then(
+  		$http.get('http://localhost:8000/subscription?token='+$rootScope.user.token).then(
         function(response) {
           console.log(response);
-          window.alert('Votre désabonnement a été pris en compte');
-          $location.path('/abonnement');
+          var orderId = response.data.data.order[0].id;
+          console.log(orderId);
+          $http.put('http://localhost:8000/subscription/'+orderId+'/stop?token='+$rootScope.user.token).then(
+              function(response) {
+                console.log(response);
+                alert('Votre désabonnement a été pris en compte.')
+              },
+              function(response){
+                console.log(response);
+              }
+          );
         },
         function(response){
           console.log(response);

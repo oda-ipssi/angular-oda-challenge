@@ -25,7 +25,7 @@ angular.module('odaChallengeApp')
     });
 
     $scope.subscribe = function(id){
-      console.log($rootScope.token);
+      console.log($rootScope.user.token);
       var data = {
           data: {
 
@@ -34,7 +34,7 @@ angular.module('odaChallengeApp')
       data.data.offerId = id;
       //data.data.Order = null;
 
-      $http.post('http://localhost:8000/subscription?token=' + $rootScope.token, data).then(function(successResponse) {
+      $http.post('http://localhost:8000/subscription?token=' + $rootScope.user.token, data).then(function(successResponse) {
               console.log(successResponse);
           }, function(errorResponse) {
               console.log(errorResponse);

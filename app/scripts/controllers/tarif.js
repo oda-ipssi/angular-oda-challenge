@@ -12,7 +12,7 @@ angular.module('odaChallengeApp')
 
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
-      $http.get('http://localhost:8000/offers?token=' + $rootScope.user.token).then(
+      $http.get('http://127.0.0.1:8000/offers?token=' + $rootScope.user.token).then(
         function(response) {
           console.log(response);
            $scope.tarifList = response.data.data;
@@ -28,7 +28,7 @@ angular.module('odaChallengeApp')
           if(response.data){
             var offerId = response.data.data.order[(response.data.data.order.length)-1].offer_id;
             var offerStatus = response.data.data.order[0].status;
-            
+
             if(offerStatus !== 3) {
               $scope.aboEnCours = offerId;
               console.log(offerId)
@@ -87,8 +87,6 @@ angular.module('odaChallengeApp')
           console.log(response);
         }
       );
-
-      
-    }
+    };
 
   }]);

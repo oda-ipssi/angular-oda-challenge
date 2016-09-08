@@ -18,9 +18,7 @@ angular.module('odaChallengeApp')
 
     var currentId = $state.params.id;
 
-    $scope.link = 'http://localhost:8000/admin/orders/' + currentId + '/download?token=' + $rootScope.user.token;
-
-    $http.get('http://localhost:8000/admin/orders/'+currentId+'?token=' + $rootScope.user.token).then(
+    $http.get('http://127.0.0.1:8000/admin/orders/'+currentId+'?token=' + $rootScope.user.token).then(
       function(response) {
           console.log(response.data);
           $scope.order = response.data.data;

@@ -2,27 +2,31 @@
 
 /**
 * @ngdoc function
-* @name odaChallengeApp.controller:OrdersCtrl
+* @name odaChallengeApp.controller:OrderDownloadCtrl
 * @description
-* # OrdersCtrl
+* # OrderDownloadCtrl
 * Controller of the odaChallengeApp
 */
 angular.module('odaChallengeApp')
 
-.controller('OrdersCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope){
+.controller('OrderDownloadCtrl', function($scope,$http,$state,$rootScope){
+
     $scope.page = {
         title: 'Commandes',
         subtitle: 'Liste'
     };
 
-    $http.get('http://127.0.0.1:8000/admin/orders?token=' + $rootScope.user.token).then(
+    var currentId = $state.params.id;
+
+    $http.get('http://127.0.0.1:8000/admin/orders/'+currentId+'/download?token=' + $rootScope.user.token).then(
       function(response) {
           console.log(response.data);
-          $scope.orders = response.data.data.orders;
+          $scope.download = response.data.data;
       },
       function(response) {
         console.log(response);
       });
+
 
 
       $scope.formatDate = function(date){
@@ -30,5 +34,5 @@ angular.module('odaChallengeApp')
               return dateOut;
         };
 
-}])
+})
 ;

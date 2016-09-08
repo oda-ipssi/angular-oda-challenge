@@ -68,7 +68,7 @@
 
     			console.log(data);
 
-  		    $http.put('http://localhost:8000/account/' + $rootScope.user.idUser + '?token=' + $rootScope.user.token, data).then(function(successResponse) {
+  		    $http.put('http://127.0.0.1:8000/account/' + $rootScope.user.idUser + '?token=' + $rootScope.user.token, data).then(function(successResponse) {
   		        console.log(successResponse);
   		    }, function(errorResponse) {
   		        console.log(errorResponse);
@@ -79,7 +79,7 @@
       $scope.$on('$viewContentLoaded', function(event) {
         event.preventDefault();
 
-        $http.get('http://localhost:8000/account/' + $rootScope.user.idUser + '?token=' + $rootScope.user.token).then(
+        $http.get('http://127.0.0.1:8000/account/' + $rootScope.user.idUser + '?token=' + $rootScope.user.token).then(
           function(response) {
              $scope.profil = response.data.data;
              console.log($scope.profil);

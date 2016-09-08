@@ -28,7 +28,7 @@ angular.module('odaChallengeApp')
 
           console.log(data);
 
-          $http.put('http://localhost:8000/account/' + $rootScope.user.idUser + '/password?token=' + $rootScope.user.token, data).then(function(successResponse) {
+          $http.put('http://127.0.0.1:8000/account/' + $rootScope.user.idUser + '/password?token=' + $rootScope.user.token, data).then(function(successResponse) {
             console.log(successResponse);
           }, function(errorResponse) {
             console.log(errorResponse);

@@ -98,9 +98,9 @@ angular.module('odaChallengeApp')
         }
       };
 
-      $http.post('http://localhost:8000/registration', dataStructured).then(function(successResponse) {
+      $http.post('http://127.0.0.1:8000/registration', dataStructured).then(function(successResponse) {
         console.log(successResponse);
-        $http.post('http://localhost:8000/sign-in', dataLogin).then(function(successResponse) {
+        $http.post('http://127.0.0.1:8000/sign-in', dataLogin).then(function(successResponse) {
           console.log(successResponse);
           var user = {
             token: successResponse.data.token,

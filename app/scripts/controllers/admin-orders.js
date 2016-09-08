@@ -15,7 +15,7 @@ angular.module('odaChallengeApp')
         subtitle: 'Liste'
     };
 
-    $http.get('http://localhost:8000/admin/orders?token=' + $rootScope.user.token).then(
+    $http.get('http://127.0.0.1:8000/admin/orders?token=' + $rootScope.user.token).then(
       function(response) {
           console.log(response.data);
           $scope.orders = response.data.data.orders;

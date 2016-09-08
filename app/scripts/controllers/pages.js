@@ -12,7 +12,7 @@ angular.module('odaChallengeApp')
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
 
-      $http.get('http://localhost:8000/admin/contents?token=' + $rootScope.user.token).then(
+      $http.get('http://127.0.0.1:8000/admin/contents?token=' + $rootScope.user.token).then(
         function(response) {
           console.log(response);
            $scope.pages = response.data.data;
@@ -39,12 +39,12 @@ angular.module('odaChallengeApp')
         }
       };
 
-      console.log('http://localhost:8000/admin/content' + $scope.url.url + '/update?token=' + $rootScope.user.token);
+      console.log('http://127.0.0.1:8000/admin/content' + $scope.url.url + '/update?token=' + $rootScope.user.token);
 
-      $http.post('http://localhost:8000/admin/content' + $scope.url.url + '/update?token=' + $rootScope.user.token, data).then(function(successResponse) {
+      $http.post('http://127.0.0.1:8000/admin/content' + $scope.url.url + '/update?token=' + $rootScope.user.token, data).then(function(successResponse) {
           console.log(successResponse);
 
-          $http.get('http://localhost:8000/admin/contents?token=' + $rootScope.user.token).then(
+          $http.get('http://127.0.0.1:8000/admin/contents?token=' + $rootScope.user.token).then(
             function(response) {
                $scope.pages = response.data.data;
             },

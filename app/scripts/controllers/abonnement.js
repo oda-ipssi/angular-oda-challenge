@@ -13,11 +13,11 @@ angular.module('odaChallengeApp')
   	$scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
 
-      $http.get('http://localhost:8000/subscription?token='+$rootScope.user.token).then(
+      $http.get('http://127.0.0.1:8000/subscription?token='+$rootScope.user.token).then(
         function(response) {
           var offerId = response.data.data.order[0].offer_id;
           var offerStatus = response.data.data.order[0].status;
-          $http.get('http://localhost:8000/offers/'+offerId).then(
+          $http.get('http://127.0.0.1:8000/offers/'+offerId).then(
               function(response) {
                 console.log(response);
                 var aboTitle = response.data.data.title;

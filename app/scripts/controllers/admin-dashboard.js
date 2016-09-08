@@ -20,7 +20,7 @@ angular.module('odaChallengeApp')
     }
 
     $scope.getUsers = function(){
-        $http.get('http://127.0.0.1:8000/admin/dashboard/active-users?token=' + $rootScope.user.token).then(
+        $http.get('http://api-yoda4.it-akademy.com/admin/dashboard/active-users?token=' + $rootScope.user.token).then(
           function(response) {
              $scope.users_number = Number(response.data.data.number);
              $scope.total_admin = Number(response.data.data.total_admin);
@@ -32,7 +32,7 @@ angular.module('odaChallengeApp')
           });
     };
     $scope.getCommandes = function(){
-        $http.get('http://127.0.0.1:8000/admin/dashboard/valid-orders?token=' + $rootScope.user.token).then(
+        $http.get('http://api-yoda4.it-akademy.com/admin/dashboard/valid-orders?token=' + $rootScope.user.token).then(
           function(response) {
               console.log(response.data.data);
              $scope.commandes_number = response.data.data.number;
@@ -98,7 +98,7 @@ angular.module('odaChallengeApp')
 .controller('MessageWidgetCtrl', function($scope){
 
     // $scope.getEmails = function(){
-    //     $http.get('http://127.0.0.1:8000/admin/dashboard/emails?token=' + $rootScope.user.token).then(
+    //     $http.get('http://api-yoda4.it-akademy.com/admin/dashboard/emails?token=' + $rootScope.user.token).then(
     //       function(response) {
     //           console.log(response.data.data);
     //          $scope.emails = response.data.data;

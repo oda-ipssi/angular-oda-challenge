@@ -13,7 +13,7 @@ angular.module('odaChallengeApp')
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
 
-      $http.get('http://127.0.0.1:8000/content/presentation').then(
+      $http.get('http://api-yoda4.it-akademy.com/content/presentation').then(
         function(response) {
           console.log(response);
           $scope.pageContent = response.data.data.content;

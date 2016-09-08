@@ -10,7 +10,7 @@
 angular.module('odaChallengeApp')
   .factory('ajaxFactory', ['$http', function ($http) {
 
-    var api = 'http://localhost:8000/DataTest/';
+    var api = 'http://api-yoda4.it-akademy.com/DataTest/';
 
     return {
       post: function (url, data) {

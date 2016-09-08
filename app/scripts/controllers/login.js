@@ -34,7 +34,7 @@ angular.module('odaChallengeApp')
           data: user
         };
 
-        $http.post('http://127.0.0.1:8000/sign-in', data).then(
+        $http.post('http://api-yoda4.it-akademy.com/sign-in', data).then(
           function(successResponse) {
             console.log(successResponse);
             $rootScope.user = {
@@ -42,7 +42,7 @@ angular.module('odaChallengeApp')
               idSession: successResponse.data.idSession,
               idUser: successResponse.data.user.id
             };
-            $http.get('http://localhost:8000/is-admin?token=' + $rootScope.user.token).then(
+            $http.get('http://api-yoda4.it-akademy.com/is-admin?token=' + $rootScope.user.token).then(
               function(response) {
                 console.log(response);
                 $rootScope.user.isAdmin = response.data.data.is_admin;

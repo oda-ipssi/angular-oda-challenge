@@ -12,7 +12,7 @@ angular.module('odaChallengeApp')
 
     $scope.$on('$viewContentLoaded', function(event) {
       event.preventDefault();
-      $http.get('http://127.0.0.1:8000/offers?token=' + $rootScope.user.token).then(
+      $http.get('http://api-yoda4.it-akademy.com/offers?token=' + $rootScope.user.token).then(
         function(response) {
           console.log(response);
            $scope.tarifList = response.data.data;
@@ -23,7 +23,7 @@ angular.module('odaChallengeApp')
           console.log(response);
         });
 
-      $http.get('http://localhost:8000/subscription?token='+$rootScope.user.token).then(
+      $http.get('http://api-yoda4.it-akademy.com/subscription?token='+$rootScope.user.token).then(
         function(response) {
           if(response.data){
             var offerId = response.data.data.order[(response.data.data.order.length)-1].offer_id;
@@ -52,14 +52,14 @@ angular.module('odaChallengeApp')
       data.data.offerId = id;
       //data.data.Order = null;
 
-      $http.get('http://localhost:8000/subscription?token='+ $rootScope.user.token).then(
+      $http.get('http://api-yoda4.it-akademy.com/subscription?token='+ $rootScope.user.token).then(
         function(response) {
           if(!response.data){
             if(id !== 1){
-              window.location.href ='http://localhost:8000/checkout/'+id+'?token='+$rootScope.user.token;
+              window.location.href ='http://api-yoda4.it-akademy.com/checkout/'+id+'?token='+$rootScope.user.token;
             }
             else {
-              $http.post('http://localhost:8000/subscription?token=' + $rootScope.user.token, data).then(function(successResponse) {
+              $http.post('http://api-yoda4.it-akademy.com/subscription?token=' + $rootScope.user.token, data).then(function(successResponse) {
                   console.log(successResponse);
               }, function(errorResponse) {
                   console.log(errorResponse);
@@ -71,10 +71,10 @@ angular.module('odaChallengeApp')
             var orderId = response.data.data.order[0].id;
             console.log(id);
             if(id !== 1){
-              window.location.href ='http://localhost:8000/checkout/'+id+'?token='+$rootScope.user.token;
+              window.location.href ='http://api-yoda4.it-akademy.com/checkout/'+id+'?token='+$rootScope.user.token;
             }
             else{
-              $http.put('http://localhost:8000/subscription/' + orderId + '?token=' + $rootScope.user.token, data).then(function(successResponse) {
+              $http.put('http://api-yoda4.it-akademy.com/subscription/' + orderId + '?token=' + $rootScope.user.token, data).then(function(successResponse) {
                 console.log(successResponse);
             }, function(errorResponse) {
                 console.log(errorResponse);

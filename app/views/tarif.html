@@ -20,7 +20,7 @@
 					<div class="pricing-bottom">
 						<a ng-show="user.token" ng-click='subscribe(tarif.id)' href="#" class="btn btn-default btn-bordered btn-lg">Sélectionner</a>
 
-						<a ng-hide="user.token" href="#" class="btn btn-default btn-bordered btn-lg">S'inscrire</a>
+						<a ng-hide="user.token" ui-sref="login" class="btn btn-default btn-bordered btn-lg">S'inscrire</a>
 					</div>
 				</div>
 			</div>

@@ -34,17 +34,29 @@ angular.module('odaChallengeApp')
           data: user
         };
 
-        $http.post('http://localhost:8000/sign-in', data).then(
+        $http.post('http://127.0.0.1:8000/sign-in', data).then(
           function(successResponse) {
             console.log(successResponse);
-            var user = {
+            $rootScope.user = {
               token: successResponse.data.token,
               idSession: successResponse.data.idSession,
               idUser: successResponse.data.user.id
             };
-            $rootScope.user = user;
-            $cookies.putObject('odaLogin', user);
-            $state.go('admin-dashboard');
+            $http.get('http://localhost:8000/is-admin?token=' + $rootScope.user.token).then(
+              function(response) {
+                console.log(response);
+                $rootScope.user.isAdmin = response.data.data.is_admin;
+                console.log($rootScope.user);
+                $cookies.putObject('odaLogin', $rootScope.user);
+                if ($rootScope.user.isAdmin) {
+                    $state.go('admin-dashboard');
+                } else {
+                    $state.go('home');
+                }
+              },
+              function(response) {
+                console.log(response);
+              });
           },
           function(errorResponse) {
             console.log('Error:', errorResponse);

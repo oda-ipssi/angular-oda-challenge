@@ -215,4 +215,10 @@ angular
           templateUrl: 'views/plan.html',
           controller: 'PlanCtrl'
         });
-    });
+    })
+    .run(['$cookies', '$rootScope', function($cookies, $rootScope) {
+      $rootScope.user = false;
+      if ($cookies.getObject('odaLogin')) {
+        $rootScope.user = $cookies.getObject('odaLogin');
+      }
+    }]);

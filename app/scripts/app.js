@@ -28,6 +28,7 @@ angular
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
+
     $urlRouterProvider.otherwise('/');
 
 
@@ -129,6 +130,11 @@ angular
         // })
 
         // Dashboard
+        .state('tarifs', {
+          url: '/admin/tarifs',
+          templateUrl: 'views/tarifs.html',
+          controller: 'TarifsCtrl'
+        })
         .state('admin-dashboard', {
           url: '/admin',
           templateUrl: 'views/admin-dashboard.html',
@@ -151,12 +157,12 @@ angular
         })
 
         .state('users', {
-          url: '/users',
+          url: '/admin/users',
           templateUrl: 'views/users.html',
           controller: 'UsersCtrl'
         })
         .state('user', {
-          url: '/users/user/:userId',
+          url: '/admin/users/user/:userId',
           templateUrl: 'views/user.html',
           controller: 'UserCtrl'
         })
@@ -171,12 +177,12 @@ angular
           controller: 'DatabaseCtrl'
         })
         .state('pages', {
-          url: '/pages',
+          url: '/admin/pages',
           templateUrl: 'views/pages.html',
           controller: 'PagesCtrl'
         })
         .state('page', {
-          url: '/pages/page/pageId',
+          url: '/admin/pages/page/pageId',
           templateUrl: 'views/page.html',
           controller: 'PageCtrl'
         })

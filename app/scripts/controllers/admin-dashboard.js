@@ -9,11 +9,12 @@
 */
 angular.module('odaChallengeApp')
 
-.controller('DashboardCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope){
+.controller('DashboardCtrl', ['$scope', '$http', '$rootScope', '$state', function ($scope, $http, $rootScope, $state){
     $scope.page = {
         title: 'Dashboard',
         subtitle: 'ODA4'
-    };
+
+    }
 
 
     $scope.getUsers = function(){
@@ -26,6 +27,7 @@ angular.module('odaChallengeApp')
           },
           function(response) {
             console.log(response);
+            $state.go('home');
           });
     };
     $scope.getCommandes = function(){

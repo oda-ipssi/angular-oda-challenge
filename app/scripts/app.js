@@ -26,7 +26,6 @@ angular
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
-
     $urlRouterProvider.otherwise('/');
 
 
@@ -42,7 +41,11 @@ angular
         })
         .state('login', {
           url: '/login',
-          templateUrl: 'views/login.html',
+          templateUrl: 'views/login.html'
+        })
+        .state('logout', {
+          url: '/logout',
+          controller: 'LogoutCtrl'
         })
         .state('reqInfo', {
           url: '/reqInfo',

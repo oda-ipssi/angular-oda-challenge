@@ -8,7 +8,7 @@
  * Controller of the odaChallengeApp
  */
 angular.module('odaChallengeApp')
-  .controller('PasswordCtrl', ['$scope', '$http', function ($scope, $http) {
+  .controller('PasswordCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
 
     var data = {
       data: {}
@@ -28,7 +28,7 @@ angular.module('odaChallengeApp')
 
           console.log(data);
 
-          $http.put('http://localhost:8000/account/6/password', data).then(function(successResponse) {
+          $http.put('http://localhost:8000/account/' + $rootScope.user.idUser + '/password?token=' + $rootScope.user.token, data).then(function(successResponse) {
             console.log(successResponse);
           }, function(errorResponse) {
             console.log(errorResponse);

@@ -9,7 +9,7 @@
 */
 angular.module('odaChallengeApp')
 
-.controller('OrderCtrl', function($scope,$http,$state){
+.controller('OrderCtrl', ['$scope', '$http', '$rootScope', '$state', function ($scope, $http, $rootScope, $state){
 
     $scope.page = {
         title: 'Commandes',
@@ -18,7 +18,13 @@ angular.module('odaChallengeApp')
 
     var currentId = $state.params.id;
 
+<<<<<<< HEAD
     $http.get('http://127.0.0.1:8000/admin/orders/'+currentId+'?token=' + $rootScope.user.token).then(
+=======
+    $scope.link = 'http://localhost:8000/admin/orders/' + currentId + '/download?token=' + $rootScope.user.token;
+
+    $http.get('http://localhost:8000/admin/orders/'+currentId+'?token=' + $rootScope.user.token).then(
+>>>>>>> a7bc4f772b49d43015faa0e6563d296c6eb8b111
       function(response) {
           console.log(response.data);
           $scope.order = response.data.data;
@@ -34,5 +40,5 @@ angular.module('odaChallengeApp')
               return dateOut;
         };
 
-})
+}])
 ;

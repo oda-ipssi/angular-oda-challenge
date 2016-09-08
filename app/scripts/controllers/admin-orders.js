@@ -9,7 +9,7 @@
 */
 angular.module('odaChallengeApp')
 
-.controller('OrdersCtrl', function($scope,$http){
+.controller('OrdersCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope){
     $scope.page = {
         title: 'Commandes',
         subtitle: 'Liste'
@@ -30,5 +30,5 @@ angular.module('odaChallengeApp')
               return dateOut;
         };
 
-})
+}])
 ;
